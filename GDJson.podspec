@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   # Top level attributes can't be specified by subspecs.
   s.header_mappings_dir = 'Classes/generated/include'
   
-  s.source_files = 'Classes/generated/include/**/*.h', 'Classes/generated/json/**/*.m'
+  s.source_files = 'Classes/common', 'Classes/generated/include/**/*.h', 'Classes/generated/json/**/*.m'
   s.dependency 'J2ObjC', '0.8.6.1'
   # Pods-GDJson target need the next line.
   s.xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/J2ObjC/dist/include"' }
