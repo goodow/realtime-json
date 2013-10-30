@@ -1,0 +1,19 @@
+PODS:
+  - GDJson (0.3.0):
+    - J2ObjC (= 0.8.6.1)
+  - J2ObjC (0.8.6.1):
+    - J2ObjC/lib/jre
+  - J2ObjC/lib/jre (0.8.6.1)
+
+DEPENDENCIES:
+  - GDJson (from `..`)
+
+EXTERNAL SOURCES:
+  GDJson:
+    :path: ..
+
+SPEC CHECKSUMS:
+  GDJson: e2a33e0a7aa1cdb2f6c95775ce2010e96b9952f5
+  J2ObjC: bea4c24af35100985485c173958f1189aa0f0f6b
+
+COCOAPODS: 0.27.1
