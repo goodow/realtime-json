@@ -43,7 +43,7 @@
     case 0:
     return 0;
     case 1:
-    return [((id<GDJsonValue>) nil_chk([self getWithInt:0])) asNumber];
+    return [((id<GDJsonValue>) nil_chk([self get:0])) asNumber];
     default:
     return JavaLangDouble_NaN;
   }
@@ -55,29 +55,29 @@
     if (i > 0) {
       (void) [toReturn appendWithNSString:@", "];
     }
-    (void) [toReturn appendWithNSString:[((id<GDJsonValue>) nil_chk([self getWithInt:i])) asString]];
+    (void) [toReturn appendWithNSString:[((id<GDJsonValue>) nil_chk([self get:i])) asString]];
   }
   return [toReturn description];
 }
 
-- (id<GDJsonValue>)getWithInt:(int)index {
+- (id<GDJsonValue>)get:(int)index {
   return [((JavaUtilArrayList *) nil_chk(arrayValues_)) getWithInt:index];
 }
 
 - (id<GDJsonArray>)getArray:(int)index {
-  return (id<GDJsonArray>) check_protocol_cast([self getWithInt:index], @protocol(GDJsonArray));
+  return (id<GDJsonArray>) check_protocol_cast([self get:index], @protocol(GDJsonArray));
 }
 
 - (BOOL)getBoolean:(int)index {
-  return [((id<GDJsonBoolean>) nil_chk([self getWithInt:index])) getBoolean];
+  return [((id<GDJsonBoolean>) nil_chk([self get:index])) getBoolean];
 }
 
 - (double)getNumber:(int)index {
-  return [((id<GDJsonNumber>) nil_chk([self getWithInt:index])) getNumber];
+  return [((id<GDJsonNumber>) nil_chk([self get:index])) getNumber];
 }
 
 - (id<GDJsonObject>)getObject:(int)index {
-  return (id<GDJsonObject>) check_protocol_cast([self getWithInt:index], @protocol(GDJsonObject));
+  return (id<GDJsonObject>) check_protocol_cast([self get:index], @protocol(GDJsonObject));
 }
 
 - (id)getObject {
@@ -89,7 +89,7 @@
 }
 
 - (NSString *)getString:(int)index {
-  return [((id<GDJsonString>) nil_chk([self getWithInt:index])) getString];
+  return [((id<GDJsonString>) nil_chk([self get:index])) getString];
 }
 
 - (GDJsonTypeEnum *)getType {
@@ -143,7 +143,7 @@
     for (int i = 0; i < [self length]; i++) {
       [arrayCtx setCurrentIndexWithInt:i];
       if ([visitor visitIndexWithInt:[arrayCtx getCurrentIndex] withElementalJsonImplJsonContext:arrayCtx]) {
-        [visitor acceptWithGDJsonValue:[self getWithInt:i] withElementalJsonImplJsonContext:arrayCtx];
+        [visitor acceptWithGDJsonValue:[self get:i] withElementalJsonImplJsonContext:arrayCtx];
         [arrayCtx setFirstWithBoolean:NO];
       }
     }

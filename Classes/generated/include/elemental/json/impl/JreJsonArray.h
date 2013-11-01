@@ -29,7 +29,7 @@
 - (BOOL)asBoolean;
 - (double)asNumber;
 - (NSString *)asString;
-- (id<GDJsonValue>)getWithInt:(int)index;
+- (id<GDJsonValue>)get:(int)index;
 - (id<GDJsonArray>)getArray:(int)index;
 - (BOOL)getBoolean:(int)index;
 - (double)getNumber:(int)index;

@@ -13,7 +13,7 @@
 #include "elemental/json/JsonValue.h"
 
 @protocol GDJsonArray < GDJsonValue, NSObject, JavaObject >
-- (id)getWithInt:(int)index;
+- (id)get:(int)index;
 - (id<GDJsonArray>)getArray:(int)index;
 - (BOOL)getBoolean:(int)index;
 - (double)getNumber:(int)index;

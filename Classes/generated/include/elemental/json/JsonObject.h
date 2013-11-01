@@ -14,7 +14,7 @@
 #include "elemental/json/JsonValue.h"
 
 @protocol GDJsonObject < GDJsonValue, NSObject, JavaObject >
-- (id)getWithNSString:(NSString *)key;
+- (id)get:(NSString *)key;
 - (id<GDJsonArray>)getArray:(NSString *)key;
 - (BOOL)getBoolean:(NSString *)key;
 - (double)getNumber:(NSString *)key;

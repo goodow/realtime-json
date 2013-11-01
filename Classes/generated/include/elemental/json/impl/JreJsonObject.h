@@ -32,7 +32,7 @@
 - (BOOL)asBoolean;
 - (double)asNumber;
 - (NSString *)asString;
-- (id<GDJsonValue>)getWithNSString:(NSString *)key;
+- (id<GDJsonValue>)get:(NSString *)key;
 - (id<GDJsonArray>)getArray:(NSString *)key;
 - (BOOL)getBoolean:(NSString *)key;
 - (double)getNumber:(NSString *)key;

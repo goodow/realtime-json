@@ -74,24 +74,24 @@
   return @"[object Object]";
 }
 
-- (id<GDJsonValue>)getWithNSString:(NSString *)key {
+- (id<GDJsonValue>)get:(NSString *)key {
   return [((id<JavaUtilMap>) nil_chk(map_)) getWithId:key];
 }
 
 - (id<GDJsonArray>)getArray:(NSString *)key {
-  return (id<GDJsonArray>) check_protocol_cast([self getWithNSString:key], @protocol(GDJsonArray));
+  return (id<GDJsonArray>) check_protocol_cast([self get:key], @protocol(GDJsonArray));
 }
 
 - (BOOL)getBoolean:(NSString *)key {
-  return [((id<GDJsonBoolean>) nil_chk([self getWithNSString:key])) getBoolean];
+  return [((id<GDJsonBoolean>) nil_chk([self get:key])) getBoolean];
 }
 
 - (double)getNumber:(NSString *)key {
-  return [((id<GDJsonNumber>) nil_chk([self getWithNSString:key])) getNumber];
+  return [((id<GDJsonNumber>) nil_chk([self get:key])) getNumber];
 }
 
 - (id<GDJsonObject>)getObject:(NSString *)key {
-  return (id<GDJsonObject>) check_protocol_cast([self getWithNSString:key], @protocol(GDJsonObject));
+  return (id<GDJsonObject>) check_protocol_cast([self get:key], @protocol(GDJsonObject));
 }
 
 - (id)getObject {
@@ -103,7 +103,7 @@
 }
 
 - (NSString *)getString:(NSString *)key {
-  return [((id<GDJsonString>) nil_chk([self getWithNSString:key])) getString];
+  return [((id<GDJsonString>) nil_chk([self get:key])) getString];
 }
 
 - (GDJsonTypeEnum *)getType {
@@ -165,7 +165,7 @@
     for (NSString * __strong key in [ElementalJsonImplJreJsonObject stringifyOrderWithNSStringArray:[self keys]]) {
       [objCtx setCurrentKeyWithNSString:key];
       if ([visitor visitKeyWithNSString:[objCtx getCurrentKey] withElementalJsonImplJsonContext:objCtx]) {
-        [visitor acceptWithGDJsonValue:[self getWithNSString:key] withElementalJsonImplJsonContext:objCtx];
+        [visitor acceptWithGDJsonValue:[self get:key] withElementalJsonImplJsonContext:objCtx];
         [objCtx setFirstWithBoolean:NO];
       }
     }
