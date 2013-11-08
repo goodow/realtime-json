@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.header_mappings_dir = 'Classes/generated/include'
   
   s.source_files = 'Classes/common', 'Classes/generated/include/**/*.h', 'Classes/generated/json/**/*.m'
-  s.dependency 'J2ObjC', '0.8.6.1'
+  s.dependency 'J2ObjC', '~> 0.8.6'
   # Pods-GDJson target need the next line.
   s.xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/J2ObjC/dist/include"' }
 end
