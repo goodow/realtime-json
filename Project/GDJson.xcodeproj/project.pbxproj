@@ -7,20 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BEBBE1B09FE4A13A1EF8FB8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F30C1E4A1F44060A518F0B7 /* libPods.a */; };
+		8D3311F21838AF4D0097FAC6 /* NSMutableDictionary+GDJsonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3311F11838AF4D0097FAC6 /* NSMutableDictionary+GDJsonObject.m */; };
+		8DA47FF11859948C0029CA8D /* NSArray+GDJsonArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA47FF01859948C0029CA8D /* NSArray+GDJsonArray.m */; };
+		8DA47FF4185995750029CA8D /* NSDictionary+GDJsonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DA47FF3185995750029CA8D /* NSDictionary+GDJsonObject.m */; };
+		8DB736B4184383400095F1FA /* Json.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DB736B3184383400095F1FA /* Json.m */; };
 		8DC306141820D0BB00A57EB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC306131820D0BB00A57EB3 /* Foundation.framework */; };
-		8DC306191820D0BB00A57EB3 /* GDJson.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DC306181820D0BB00A57EB3 /* GDJson.h */; };
-		8DC3061B1820D0BB00A57EB3 /* GDJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3061A1820D0BB00A57EB3 /* GDJson.m */; };
-		8DC306221820D0BB00A57EB3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC306211820D0BB00A57EB3 /* XCTest.framework */; };
-		8DC306231820D0BB00A57EB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC306131820D0BB00A57EB3 /* Foundation.framework */; };
-		8DC306251820D0BB00A57EB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC306241820D0BB00A57EB3 /* UIKit.framework */; };
-		8DC306281820D0BB00A57EB3 /* libGDJson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC306101820D0BB00A57EB3 /* libGDJson.a */; };
-		8DC3062E1820D0BB00A57EB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8DC3062C1820D0BB00A57EB3 /* InfoPlist.strings */; };
-		8DC306301820D0BB00A57EB3 /* GDJsonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC3062F1820D0BB00A57EB3 /* GDJsonTests.m */; };
+		8DC54DAE183B3A51002AEDF2 /* NSMutableArray+GDJsonArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC54DAD183B3A51002AEDF2 /* NSMutableArray+GDJsonArray.m */; };
+		8DEFA8CB1855E68900067337 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC306211820D0BB00A57EB3 /* XCTest.framework */; };
+		8DEFA8D11855E68900067337 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8DEFA8CF1855E68900067337 /* InfoPlist.strings */; };
+		8DEFA8D31855E68900067337 /* GDJsonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFA8D21855E68900067337 /* GDJsonTests.m */; };
 		D62455FCC3EB4E74B95A3B39 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F30C1E4A1F44060A518F0B7 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8DC306261820D0BB00A57EB3 /* PBXContainerItemProxy */ = {
+		8DEFA8D51855E68900067337 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8DC306081820D0BB00A57EB3 /* Project object */;
 			proxyType = 1;
@@ -36,7 +37,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				8DC306191820D0BB00A57EB3 /* GDJson.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,18 +45,27 @@
 /* Begin PBXFileReference section */
 		63FA075C703044018AE90EA9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		7F30C1E4A1F44060A518F0B7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D3311F01838AF4D0097FAC6 /* NSMutableDictionary+GDJsonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+GDJsonObject.h"; sourceTree = "<group>"; };
+		8D3311F11838AF4D0097FAC6 /* NSMutableDictionary+GDJsonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+GDJsonObject.m"; sourceTree = "<group>"; };
+		8DA47FEF1859948C0029CA8D /* NSArray+GDJsonArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+GDJsonArray.h"; sourceTree = "<group>"; };
+		8DA47FF01859948C0029CA8D /* NSArray+GDJsonArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+GDJsonArray.m"; sourceTree = "<group>"; };
+		8DA47FF2185995750029CA8D /* NSDictionary+GDJsonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+GDJsonObject.h"; sourceTree = "<group>"; };
+		8DA47FF3185995750029CA8D /* NSDictionary+GDJsonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+GDJsonObject.m"; sourceTree = "<group>"; };
+		8DB736B3184383400095F1FA /* Json.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Json.m; sourceTree = "<group>"; };
+		8DBF352B18422C7A00C2A945 /* GDJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDJson.h; sourceTree = "<group>"; };
 		8DC306101820D0BB00A57EB3 /* libGDJson.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGDJson.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC306131820D0BB00A57EB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		8DC306171820D0BB00A57EB3 /* GDJson-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GDJson-Prefix.pch"; sourceTree = "<group>"; };
-		8DC306181820D0BB00A57EB3 /* GDJson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDJson.h; sourceTree = "<group>"; };
-		8DC3061A1820D0BB00A57EB3 /* GDJson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDJson.m; sourceTree = "<group>"; };
-		8DC306201820D0BB00A57EB3 /* GDJsonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDJsonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC306211820D0BB00A57EB3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		8DC306241820D0BB00A57EB3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		8DC3062B1820D0BB00A57EB3 /* GDJsonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GDJsonTests-Info.plist"; sourceTree = "<group>"; };
-		8DC3062D1820D0BB00A57EB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		8DC3062F1820D0BB00A57EB3 /* GDJsonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDJsonTests.m; sourceTree = "<group>"; };
-		8DC3063A18213DA000A57EB3 /* GDJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDJ.h; sourceTree = "<group>"; };
+		8DC54DAC183B3A51002AEDF2 /* NSMutableArray+GDJsonArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+GDJsonArray.h"; sourceTree = "<group>"; };
+		8DC54DAD183B3A51002AEDF2 /* NSMutableArray+GDJsonArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+GDJsonArray.m"; sourceTree = "<group>"; };
+		8DED65041855EF7200FA092C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		8DEFA8CA1855E68900067337 /* GDJsonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDJsonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DEFA8CE1855E68900067337 /* GDJsonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GDJsonTests-Info.plist"; sourceTree = "<group>"; };
+		8DEFA8D01855E68900067337 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8DEFA8D21855E68900067337 /* GDJsonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDJsonTests.m; sourceTree = "<group>"; };
+		8DEFA8D41855E68900067337 /* GDJsonTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GDJsonTests-Prefix.pch"; sourceTree = "<group>"; };
+		F75D99F594A241A584B08581 /* libPods-GDJsonTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GDJsonTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,26 +78,65 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8DC3061D1820D0BB00A57EB3 /* Frameworks */ = {
+		8DEFA8C71855E68900067337 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC306221820D0BB00A57EB3 /* XCTest.framework in Frameworks */,
-				8DC306251820D0BB00A57EB3 /* UIKit.framework in Frameworks */,
-				8DC306281820D0BB00A57EB3 /* libGDJson.a in Frameworks */,
-				8DC306231820D0BB00A57EB3 /* Foundation.framework in Frameworks */,
+				8DEFA8CB1855E68900067337 /* XCTest.framework in Frameworks */,
+				3BEBBE1B09FE4A13A1EF8FB8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8DB736AD184383400095F1FA /* override */ = {
+			isa = PBXGroup;
+			children = (
+				8DB736AE184383400095F1FA /* com */,
+			);
+			name = override;
+			path = ../Classes/override;
+			sourceTree = "<group>";
+		};
+		8DB736AE184383400095F1FA /* com */ = {
+			isa = PBXGroup;
+			children = (
+				8DB736AF184383400095F1FA /* goodow */,
+			);
+			path = com;
+			sourceTree = "<group>";
+		};
+		8DB736AF184383400095F1FA /* goodow */ = {
+			isa = PBXGroup;
+			children = (
+				8DB736B0184383400095F1FA /* realtime */,
+			);
+			path = goodow;
+			sourceTree = "<group>";
+		};
+		8DB736B0184383400095F1FA /* realtime */ = {
+			isa = PBXGroup;
+			children = (
+				8DB736B1184383400095F1FA /* json */,
+			);
+			path = realtime;
+			sourceTree = "<group>";
+		};
+		8DB736B1184383400095F1FA /* json */ = {
+			isa = PBXGroup;
+			children = (
+				8DB736B3184383400095F1FA /* Json.m */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
 		8DC306071820D0BA00A57EB3 = {
 			isa = PBXGroup;
 			children = (
 				8DC3063918213D7A00A57EB3 /* common */,
-				8DC306151820D0BB00A57EB3 /* GDJson */,
-				8DC306291820D0BB00A57EB3 /* GDJsonTests */,
+				8DB736AD184383400095F1FA /* override */,
+				8DEFA8CC1855E68900067337 /* GDJsonTests */,
 				8DC306121820D0BB00A57EB3 /* Frameworks */,
 				8DC306111820D0BB00A57EB3 /* Products */,
 				63FA075C703044018AE90EA9 /* Pods.xcconfig */,
@@ -99,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				8DC306101820D0BB00A57EB3 /* libGDJson.a */,
-				8DC306201820D0BB00A57EB3 /* GDJsonTests.xctest */,
+				8DEFA8CA1855E68900067337 /* GDJsonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,57 +155,50 @@
 		8DC306121820D0BB00A57EB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DED65041855EF7200FA092C /* libz.dylib */,
 				8DC306131820D0BB00A57EB3 /* Foundation.framework */,
 				8DC306211820D0BB00A57EB3 /* XCTest.framework */,
 				8DC306241820D0BB00A57EB3 /* UIKit.framework */,
 				7F30C1E4A1F44060A518F0B7 /* libPods.a */,
+				F75D99F594A241A584B08581 /* libPods-GDJsonTests.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8DC306151820D0BB00A57EB3 /* GDJson */ = {
-			isa = PBXGroup;
-			children = (
-				8DC306181820D0BB00A57EB3 /* GDJson.h */,
-				8DC3061A1820D0BB00A57EB3 /* GDJson.m */,
-				8DC306161820D0BB00A57EB3 /* Supporting Files */,
-			);
-			path = GDJson;
-			sourceTree = "<group>";
-		};
-		8DC306161820D0BB00A57EB3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8DC306171820D0BB00A57EB3 /* GDJson-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8DC306291820D0BB00A57EB3 /* GDJsonTests */ = {
-			isa = PBXGroup;
-			children = (
-				8DC3062F1820D0BB00A57EB3 /* GDJsonTests.m */,
-				8DC3062A1820D0BB00A57EB3 /* Supporting Files */,
-			);
-			path = GDJsonTests;
-			sourceTree = "<group>";
-		};
-		8DC3062A1820D0BB00A57EB3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				8DC3062B1820D0BB00A57EB3 /* GDJsonTests-Info.plist */,
-				8DC3062C1820D0BB00A57EB3 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		8DC3063918213D7A00A57EB3 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				8DC3063A18213DA000A57EB3 /* GDJ.h */,
+				8DBF352B18422C7A00C2A945 /* GDJson.h */,
+				8DA47FEF1859948C0029CA8D /* NSArray+GDJsonArray.h */,
+				8DA47FF01859948C0029CA8D /* NSArray+GDJsonArray.m */,
+				8DC54DAC183B3A51002AEDF2 /* NSMutableArray+GDJsonArray.h */,
+				8DC54DAD183B3A51002AEDF2 /* NSMutableArray+GDJsonArray.m */,
+				8DA47FF2185995750029CA8D /* NSDictionary+GDJsonObject.h */,
+				8DA47FF3185995750029CA8D /* NSDictionary+GDJsonObject.m */,
+				8D3311F01838AF4D0097FAC6 /* NSMutableDictionary+GDJsonObject.h */,
+				8D3311F11838AF4D0097FAC6 /* NSMutableDictionary+GDJsonObject.m */,
 			);
 			name = common;
 			path = ../Classes/common;
+			sourceTree = "<group>";
+		};
+		8DEFA8CC1855E68900067337 /* GDJsonTests */ = {
+			isa = PBXGroup;
+			children = (
+				8DEFA8D21855E68900067337 /* GDJsonTests.m */,
+				8DEFA8CD1855E68900067337 /* Supporting Files */,
+			);
+			path = GDJsonTests;
+			sourceTree = "<group>";
+		};
+		8DEFA8CD1855E68900067337 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8DEFA8CE1855E68900067337 /* GDJsonTests-Info.plist */,
+				8DEFA8CF1855E68900067337 /* InfoPlist.strings */,
+				8DEFA8D41855E68900067337 /* GDJsonTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,22 +223,24 @@
 			productReference = 8DC306101820D0BB00A57EB3 /* libGDJson.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		8DC3061F1820D0BB00A57EB3 /* GDJsonTests */ = {
+		8DEFA8C91855E68900067337 /* GDJsonTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8DC306361820D0BB00A57EB3 /* Build configuration list for PBXNativeTarget "GDJsonTests" */;
+			buildConfigurationList = 8DEFA8D71855E68900067337 /* Build configuration list for PBXNativeTarget "GDJsonTests" */;
 			buildPhases = (
-				8DC3061C1820D0BB00A57EB3 /* Sources */,
-				8DC3061D1820D0BB00A57EB3 /* Frameworks */,
-				8DC3061E1820D0BB00A57EB3 /* Resources */,
+				BA20B24101F94C30A8A32391 /* Check Pods Manifest.lock */,
+				8DEFA8C61855E68900067337 /* Sources */,
+				8DEFA8C71855E68900067337 /* Frameworks */,
+				8DEFA8C81855E68900067337 /* Resources */,
+				F9D05A5FF18A4063854ED9C9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8DC306271820D0BB00A57EB3 /* PBXTargetDependency */,
+				8DEFA8D61855E68900067337 /* PBXTargetDependency */,
 			);
 			name = GDJsonTests;
 			productName = GDJsonTests;
-			productReference = 8DC306201820D0BB00A57EB3 /* GDJsonTests.xctest */;
+			productReference = 8DEFA8CA1855E68900067337 /* GDJsonTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -208,6 +251,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Goodow;
+				TargetAttributes = {
+					8DEFA8C91855E68900067337 = {
+						TestTargetID = 8DC3060F1820D0BB00A57EB3;
+					};
+				};
 			};
 			buildConfigurationList = 8DC3060B1820D0BB00A57EB3 /* Build configuration list for PBXProject "GDJson" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -222,17 +270,17 @@
 			projectRoot = "";
 			targets = (
 				8DC3060F1820D0BB00A57EB3 /* GDJson */,
-				8DC3061F1820D0BB00A57EB3 /* GDJsonTests */,
+				8DEFA8C91855E68900067337 /* GDJsonTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8DC3061E1820D0BB00A57EB3 /* Resources */ = {
+		8DEFA8C81855E68900067337 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC3062E1820D0BB00A57EB3 /* InfoPlist.strings in Resources */,
+				8DEFA8D11855E68900067337 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +317,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		BA20B24101F94C30A8A32391 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F9D05A5FF18A4063854ED9C9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -276,33 +354,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC3061B1820D0BB00A57EB3 /* GDJson.m in Sources */,
+				8D3311F21838AF4D0097FAC6 /* NSMutableDictionary+GDJsonObject.m in Sources */,
+				8DC54DAE183B3A51002AEDF2 /* NSMutableArray+GDJsonArray.m in Sources */,
+				8DB736B4184383400095F1FA /* Json.m in Sources */,
+				8DA47FF4185995750029CA8D /* NSDictionary+GDJsonObject.m in Sources */,
+				8DA47FF11859948C0029CA8D /* NSArray+GDJsonArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8DC3061C1820D0BB00A57EB3 /* Sources */ = {
+		8DEFA8C61855E68900067337 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DC306301820D0BB00A57EB3 /* GDJsonTests.m in Sources */,
+				8DEFA8D31855E68900067337 /* GDJsonTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8DC306271820D0BB00A57EB3 /* PBXTargetDependency */ = {
+		8DEFA8D61855E68900067337 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8DC3060F1820D0BB00A57EB3 /* GDJson */;
-			targetProxy = 8DC306261820D0BB00A57EB3 /* PBXContainerItemProxy */;
+			targetProxy = 8DEFA8D51855E68900067337 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8DC3062C1820D0BB00A57EB3 /* InfoPlist.strings */ = {
+		8DEFA8CF1855E68900067337 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8DC3062D1820D0BB00A57EB3 /* en */,
+				8DEFA8D01855E68900067337 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -344,7 +426,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -375,7 +457,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -386,8 +468,8 @@
 			buildSettings = {
 				DSTROOT = /tmp/GDJson.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GDJson/GDJson-Prefix.pch";
-				OTHER_LDFLAGS = "$(inherited)";
+				GCC_PREFIX_HEADER = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -399,46 +481,57 @@
 			buildSettings = {
 				DSTROOT = /tmp/GDJson.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GDJson/GDJson-Prefix.pch";
-				OTHER_LDFLAGS = "$(inherited)";
+				GCC_PREFIX_HEADER = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		8DC306371820D0BB00A57EB3 /* Debug */ = {
+		8DEFA8D81855E68900067337 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63FA075C703044018AE90EA9 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
 				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GDJson/GDJson-Prefix.pch";
+				GCC_PREFIX_HEADER = "GDJsonTests/GDJsonTests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "GDJsonTests/GDJsonTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		8DC306381820D0BB00A57EB3 /* Release */ = {
+		8DEFA8D91855E68900067337 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63FA075C703044018AE90EA9 /* Pods.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
 				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GDJson/GDJson-Prefix.pch";
+				GCC_PREFIX_HEADER = "GDJsonTests/GDJsonTests-Prefix.pch";
 				INFOPLIST_FILE = "GDJsonTests/GDJsonTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lz",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -465,11 +558,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8DC306361820D0BB00A57EB3 /* Build configuration list for PBXNativeTarget "GDJsonTests" */ = {
+		8DEFA8D71855E68900067337 /* Build configuration list for PBXNativeTarget "GDJsonTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8DC306371820D0BB00A57EB3 /* Debug */,
-				8DC306381820D0BB00A57EB3 /* Release */,
+				8DEFA8D81855E68900067337 /* Debug */,
+				8DEFA8D91855E68900067337 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

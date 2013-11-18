@@ -2,11 +2,12 @@
 //  GDJsonTests.m
 //  GDJsonTests
 //
-//  Created by dev on 13-10-30.
+//  Created by dev on 13-12-9.
 //  Copyright (c) 2013年 Goodow. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
+#import "GDJson.h"
 
 @interface GDJsonTests : XCTestCase
 
@@ -28,7 +29,9 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+  NSString *jsonString = @" {} ";
+  NSMutableDictionary *json = [GDJson parse:jsonString];
+  [json setObject:@"ab" forKey:@"cd"];
 }
 
 @end
