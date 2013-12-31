@@ -18,6 +18,11 @@ package com.goodow.realtime.json;
  */
 public interface JsonObject extends JsonElement {
   /**
+   * Removes all entries.
+   */
+  JsonObject clear();
+
+  /**
    * Return the element (uncoerced) as a value.
    */
   <T> T get(String key);

@@ -17,6 +17,10 @@ package com.goodow.realtime.json;
  * Represents a Json array.
  */
 public interface JsonArray extends JsonElement {
+  /**
+   * Removes all values from the array.
+   */
+  JsonArray clear();
 
   /**
    * Return the ith element of the array.

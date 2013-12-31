@@ -23,7 +23,7 @@
 
 @implementation NSMutableArray (GDJsonArray)
 
-#pragma mark - JsonArray
+#pragma mark - JsonArray mutable methods
 - (id<GDJsonArray>)insert:(int)index value:(id)value {
   [self insertObject:value == nil ? [NSNull null] : value atIndex:index];
   return self;
@@ -42,6 +42,10 @@
   return self;
 }
 
+- (id<GDJsonArray>)clear {
+  [self removeAllObjects];
+  return self;
+}
 - (id<GDJsonArray>)remove:(int)index {
   [self removeObjectAtIndex:index];
   return self;

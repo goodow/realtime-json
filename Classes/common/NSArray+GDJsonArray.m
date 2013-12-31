@@ -86,6 +86,10 @@
 - (id<GDJsonArray>)push:(id)value {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
+
+- (id<GDJsonArray>)clear {
+  @throw [[JavaLangUnsupportedOperationException alloc] init];
+}
 - (id<GDJsonArray>)remove:(int)index {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }

@@ -23,12 +23,7 @@
 
 @implementation NSMutableDictionary (GDJsonObject)
 
-#pragma mark - JsonObject
-- (id<GDJsonObject>)remove:(NSString *)key {
-  [self removeObjectForKey:key];
-  return self;
-}
-
+#pragma mark - JsonObject mutable methods
 - (id<GDJsonObject>)set:(NSString *)key boolean:(BOOL)bool_ {
   [self set:key value:[NSNumber numberWithBool:bool_]];
   return self;
@@ -39,6 +34,15 @@
 }
 - (id<GDJsonObject>)set:(NSString *)key value:(id)value {
   [self setValue:value == nil ? [NSNull null] : value forKey:key];
+  return self;
+}
+
+- (id<GDJsonObject>)clear {
+  [self removeAllObjects];
+  return self;
+}
+- (id<GDJsonObject>)remove:(NSString *)key {
+  [self removeObjectForKey:key];
   return self;
 }
 

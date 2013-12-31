@@ -30,6 +30,14 @@ public final class JsJsonArray extends JsJsonElement implements JsonArray {
   }
 
   @Override
+  // @formatter:off
+  public native JsJsonArray clear() /*-{
+    this.length = 0;
+    return this;
+  }-*/;
+  // @formatter:on
+
+  @Override
   public JsJsonElement get(int index) {
     return get0(index).cast();
   }

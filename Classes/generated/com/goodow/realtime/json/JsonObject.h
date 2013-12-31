@@ -16,6 +16,7 @@
 #include "com/goodow/realtime/json/JsonElement.h"
 
 @protocol GDJsonObject < GDJsonElement, NSObject, JavaObject >
+- (id<GDJsonObject>)clear;
 - (id)getWithNSString:(NSString *)key;
 - (id<GDJsonArray>)getArray:(NSString *)key;
 - (BOOL)getBoolean:(NSString *)key;

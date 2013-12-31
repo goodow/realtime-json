@@ -23,13 +23,24 @@ import com.google.gwt.core.client.JsArrayString;
  * Client-side implementation of JsonObject interface.
  */
 public final class JsJsonObject extends JsJsonElement implements JsonObject {
-
   public static JsJsonObject create() {
     return JavaScriptObject.createObject().cast();
   }
 
   protected JsJsonObject() {
   }
+
+  @Override
+  // @formatter:off
+  public native JsJsonObject clear() /*-{
+    for (var key in this) {
+      if (Object.prototype.hasOwnProperty.call(this, key)) {
+        delete this[key];
+      }
+    }
+    return this;
+  }-*/;
+  // @formatter:on
 
   @Override
   public JsJsonElement get(String key) {

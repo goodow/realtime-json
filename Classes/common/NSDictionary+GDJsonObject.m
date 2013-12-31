@@ -82,9 +82,6 @@
 }
 
 #pragma mark - Mutable JsonObject
-- (id<GDJsonObject>)remove:(NSString *)key {
-  @throw [[JavaLangUnsupportedOperationException alloc] init];
-}
 - (id<GDJsonObject>)set:(NSString *)key boolean:(BOOL)bool_ {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
@@ -92,6 +89,13 @@
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
 - (id<GDJsonObject>)set:(NSString *)key value:(id)value {
+  @throw [[JavaLangUnsupportedOperationException alloc] init];
+}
+
+- (id<GDJsonObject>)clear {
+  @throw [[JavaLangUnsupportedOperationException alloc] init];
+}
+- (id<GDJsonObject>)remove:(NSString *)key {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
 }
 

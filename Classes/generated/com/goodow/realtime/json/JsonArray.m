@@ -17,9 +17,10 @@
 
 + (J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
+    { "clear", NULL, "LGDJsonArray", 0x401, NULL },
     { "getWithInt:", NULL, "TT", 0x401, NULL },
   };
-  static J2ObjcClassInfo _GDJsonArray = { "JsonArray", "com.goodow.realtime.json", NULL, 0x201, 1, methods, 0, NULL, 0, NULL};
+  static J2ObjcClassInfo _GDJsonArray = { "JsonArray", "com.goodow.realtime.json", NULL, 0x201, 2, methods, 0, NULL, 0, NULL};
   return &_GDJsonArray;
 }
 

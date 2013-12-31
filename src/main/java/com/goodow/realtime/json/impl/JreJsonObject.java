@@ -40,6 +40,12 @@ public class JreJsonObject extends JreJsonElement implements JsonObject {
   }
 
   @Override
+  public JsonObject clear() {
+    map.clear();
+    return this;
+  }
+
+  @Override
   public boolean equals(Object o) {
     if (this == o)
       return true;
