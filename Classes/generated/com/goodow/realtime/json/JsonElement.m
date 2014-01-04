@@ -5,9 +5,7 @@
 //  Created by retechretech.
 //
 
-#include "com/goodow/realtime/json/JsonArray.h"
 #include "com/goodow/realtime/json/JsonElement.h"
-#include "com/goodow/realtime/json/JsonObject.h"
 
 
 @interface GDJsonElement : NSObject
@@ -17,8 +15,8 @@
 
 + (J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { "asArray", NULL, "LGDJsonArray", 0x401, NULL },
-    { "asObject", NULL, "LGDJsonObject", 0x401, NULL },
+    { "clear", NULL, "TT", 0x401, NULL },
+    { "copy__", NULL, "TT", 0x401, NULL },
     { "isArray", NULL, "Z", 0x401, NULL },
     { "isObject", NULL, "Z", 0x401, NULL },
     { "toJsonString", NULL, "LNSString", 0x401, NULL },

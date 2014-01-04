@@ -23,15 +23,7 @@ import java.util.Map;
 public abstract class JreJsonElement implements JsonElement {
   private static final long serialVersionUID = 3661435771481171596L;
 
-  @Override
-  public JreJsonArray asArray() {
-    return (JreJsonArray) this;
-  }
-
-  @Override
-  public JreJsonObject asObject() {
-    return (JreJsonObject) this;
-  }
+  protected boolean needsCopy;
 
   @Override
   public boolean isArray() {
@@ -42,6 +34,8 @@ public abstract class JreJsonElement implements JsonElement {
   public boolean isObject() {
     return this instanceof JreJsonObject;
   }
+
+  public abstract Object toNative();
 
   @Override
   public String toString() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Goodow.com
+ * Copyright 2014 Goodow.com
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -13,19 +13,11 @@
  */
 package com.goodow.realtime.json;
 
-import java.io.Serializable;
 
-public interface JsonElement extends Serializable {
-  <T extends JsonElement> T clear();
+public interface JsonFactory {
+  JsonArray createArray();
 
-  <T extends JsonElement> T copy();
+  JsonObject createObject();
 
-  boolean isArray();
-
-  boolean isObject();
-
-  /**
-   * Returns a serialized JSON string representing this value.
-   */
-  String toJsonString();
+  <T> T parse(String jsonString);
 }

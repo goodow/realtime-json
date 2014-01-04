@@ -19,10 +19,11 @@
 + (J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
     { "clear", NULL, "LGDJsonObject", 0x401, NULL },
+    { "copy__", NULL, "LGDJsonObject", 0x401, NULL },
     { "getWithNSString:", NULL, "TT", 0x401, NULL },
     { "keys", NULL, "LIOSObjectArray", 0x401, NULL },
   };
-  static J2ObjcClassInfo _GDJsonObject = { "JsonObject", "com.goodow.realtime.json", NULL, 0x201, 3, methods, 0, NULL, 0, NULL};
+  static J2ObjcClassInfo _GDJsonObject = { "JsonObject", "com.goodow.realtime.json", NULL, 0x201, 4, methods, 0, NULL, 0, NULL};
   return &_GDJsonObject;
 }
 

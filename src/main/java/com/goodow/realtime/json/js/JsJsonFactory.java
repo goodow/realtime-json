@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Goodow.com
+ * Copyright 2014 Goodow.com
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License. You may obtain a copy of the License at
@@ -13,38 +13,35 @@
  */
 package com.goodow.realtime.json.js;
 
-import com.goodow.realtime.json.JsonElement;
+import com.goodow.realtime.json.JsonArray;
 import com.goodow.realtime.json.JsonException;
-import com.goodow.realtime.json.JsonType;
+import com.goodow.realtime.json.JsonFactory;
+import com.goodow.realtime.json.JsonObject;
 
-abstract class JsJsonElement extends JsJsonValue implements JsonElement {
-  private static final long serialVersionUID = 2020864649803892593L;
-
+public class JsJsonFactory implements JsonFactory {
   // @formatter:off
-  static native <T extends JsonElement> T copy(JsJsonElement obj) /*-{
-    return $wnd.JSON.parse($wnd.JSON.stringify(obj));
+  private native static <T> T parse0(String jsonString) /*-{
+    // assume Chrome, safe and non-broken JSON.parse impl
+    return $wnd.JSON.parse(jsonString);
   }-*/;
   // @formatter:on
 
-  protected JsJsonElement() {
+  @Override
+  public JsonArray createArray() {
+    return JsJsonArray.create();
   }
 
   @Override
-  public final boolean isArray() {
-    return getType() == JsonType.ARRAY;
+  public JsonObject createObject() {
+    return JsJsonObject.create();
   }
 
   @Override
-  public final boolean isObject() {
-    return getType() == JsonType.OBJECT;
-  }
-
-  @Override
-  public final String toJsonString() {
+  public <T> T parse(String jsonString) throws JsonException {
     try {
-      return super.toJson();
+      return parse0(jsonString);
     } catch (Exception e) {
-      throw new JsonException("Failed to encode as JSON: " + e.getMessage());
+      throw new JsonException("Can't parse JSON string: " + e.getMessage());
     }
   }
 }

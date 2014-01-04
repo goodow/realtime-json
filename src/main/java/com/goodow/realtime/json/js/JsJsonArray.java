@@ -22,6 +22,8 @@ import com.google.gwt.core.client.JavaScriptObject;
  * Client-side implementation of JsonArray.
  */
 public final class JsJsonArray extends JsJsonElement implements JsonArray {
+  private static final long serialVersionUID = -8395506929193541582L;
+
   public static JsonArray create() {
     return (JsJsonArray) JavaScriptObject.createArray();
   }
@@ -29,6 +31,7 @@ public final class JsJsonArray extends JsJsonElement implements JsonArray {
   protected JsJsonArray() {
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   // @formatter:off
   public native JsJsonArray clear() /*-{
@@ -37,6 +40,13 @@ public final class JsJsonArray extends JsJsonElement implements JsonArray {
   }-*/;
   // @formatter:on
 
+  @SuppressWarnings("unchecked")
+  @Override
+  public JsonArray copy() {
+    return JsJsonElement.copy(this);
+  }
+
+  @SuppressWarnings("unchecked")
   @Override
   public JsJsonElement get(int index) {
     return get0(index).cast();

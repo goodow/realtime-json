@@ -36,6 +36,7 @@
 + (id)parseWithNSString:(NSString *)jsonString;
 + (NSString *)toJsonString:(id)element;
 + (GDJsonTypeEnum *)getType:(id)value;
++ (id)copy:(id)element;
 @end
 
 typedef GDJson ComGoodowRealtimeJsonJson;

@@ -26,7 +26,23 @@ import java.util.Map;
  */
 public class JreJsonArray extends JreJsonElement implements JsonArray {
   private static final long serialVersionUID = -4799870976276999803L;
-  final List<Object> list;
+
+  @SuppressWarnings("unchecked")
+  static List<Object> convertList(List<?> list) {
+    List<Object> arr = new ArrayList<Object>(list.size());
+    for (Object obj : list) {
+      if (obj instanceof Map) {
+        arr.add(JreJsonObject.convertMap((Map<String, Object>) obj));
+      } else if (obj instanceof List) {
+        arr.add(convertList((List<?>) obj));
+      } else {
+        arr.add(obj);
+      }
+    }
+    return arr;
+  }
+
+  protected List<Object> list;
 
   public JreJsonArray() {
     this.list = new ArrayList<Object>();
@@ -40,10 +56,25 @@ public class JreJsonArray extends JreJsonElement implements JsonArray {
     list = JacksonUtil.decodeValue(jsonString, List.class);
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public JsonArray clear() {
-    list.clear();
+    if (needsCopy) {
+      list = new ArrayList<Object>();
+      needsCopy = false;
+    } else {
+      list.clear();
+    }
     return this;
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  public JsonArray copy() {
+    JreJsonArray copy = new JreJsonArray(list);
+    // We actually do the copy lazily if the object is subsequently mutated
+    copy.needsCopy = true;
+    return copy;
   }
 
   @Override
@@ -124,6 +155,7 @@ public class JreJsonArray extends JreJsonElement implements JsonArray {
 
   @Override
   public JsonArray insert(int index, Object value) {
+    checkCopy();
     if (value instanceof JreJsonObject) {
       value = ((JreJsonObject) value).map;
     } else if (value instanceof JreJsonArray) {
@@ -140,18 +172,21 @@ public class JreJsonArray extends JreJsonElement implements JsonArray {
 
   @Override
   public JsonArray push(boolean bool_) {
+    checkCopy();
     list.add(bool_);
     return this;
   }
 
   @Override
   public JsonArray push(double number) {
+    checkCopy();
     list.add(number);
     return this;
   }
 
   @Override
   public JsonArray push(Object value) {
+    checkCopy();
     if (value instanceof JreJsonObject) {
       value = ((JreJsonObject) value).map;
     } else if (value instanceof JreJsonArray) {
@@ -163,6 +198,7 @@ public class JreJsonArray extends JreJsonElement implements JsonArray {
 
   @Override
   public JsonArray remove(int index) {
+    checkCopy();
     list.remove(index);
     return this;
   }
@@ -170,5 +206,18 @@ public class JreJsonArray extends JreJsonElement implements JsonArray {
   @Override
   public String toJsonString() {
     return JacksonUtil.encode(this.list);
+  }
+
+  @Override
+  public List<Object> toNative() {
+    return list;
+  }
+
+  private void checkCopy() {
+    if (needsCopy) {
+      // deep copy the list lazily if the object is mutated
+      list = convertList(list);
+      needsCopy = false;
+    }
   }
 }

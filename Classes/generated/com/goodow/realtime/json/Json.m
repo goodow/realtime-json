@@ -73,4 +73,8 @@
   @throw [[JavaLangIllegalArgumentException alloc] initWithNSString:[NSString stringWithFormat:@"Invalid JSON type: %@", [[nil_chk(value) getClass] getName]]];
 }
 
++ (id)copy:(id)element {
+  return [GDJson parseWithNSString:[GDJson toJsonString:element]];
+}
+
 @end

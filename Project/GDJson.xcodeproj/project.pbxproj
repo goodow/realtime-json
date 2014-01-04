@@ -59,6 +59,7 @@
 		8DC306241820D0BB00A57EB3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8DC54DAC183B3A51002AEDF2 /* NSMutableArray+GDJsonArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+GDJsonArray.h"; sourceTree = "<group>"; };
 		8DC54DAD183B3A51002AEDF2 /* NSMutableArray+GDJsonArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+GDJsonArray.m"; sourceTree = "<group>"; };
+		8DE41F2A187BD8A9009DB25A /* Json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Json.h; sourceTree = "<group>"; };
 		8DED65041855EF7200FA092C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8DEFA8CA1855E68900067337 /* GDJsonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDJsonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DEFA8CE1855E68900067337 /* GDJsonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GDJsonTests-Info.plist"; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		8DB736B1184383400095F1FA /* json */ = {
 			isa = PBXGroup;
 			children = (
+				8DE41F2A187BD8A9009DB25A /* Json.h */,
 				8DB736B3184383400095F1FA /* Json.m */,
 			);
 			path = json;

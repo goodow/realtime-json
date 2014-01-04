@@ -8,15 +8,12 @@
 #ifndef _GDJsonElement_H_
 #define _GDJsonElement_H_
 
-@protocol GDJsonArray;
-@protocol GDJsonObject;
-
 #import "JreEmulation.h"
 #include "java/io/Serializable.h"
 
 @protocol GDJsonElement < JavaIoSerializable, NSObject, JavaObject >
-- (id<GDJsonArray>)asArray;
-- (id<GDJsonObject>)asObject;
+- (id)clear;
+- (id)copy__ OBJC_METHOD_FAMILY_NONE;
 - (BOOL)isArray;
 - (BOOL)isObject;
 - (NSString *)toJsonString;

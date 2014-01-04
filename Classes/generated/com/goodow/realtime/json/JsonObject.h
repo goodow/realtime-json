@@ -17,6 +17,7 @@
 
 @protocol GDJsonObject < GDJsonElement, NSObject, JavaObject >
 - (id<GDJsonObject>)clear;
+- (id<GDJsonObject>)copy__ OBJC_METHOD_FAMILY_NONE;
 - (id)getWithNSString:(NSString *)key;
 - (id<GDJsonArray>)getArray:(NSString *)key;
 - (BOOL)getBoolean:(NSString *)key;

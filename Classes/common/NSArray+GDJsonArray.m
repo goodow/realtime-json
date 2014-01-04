@@ -20,18 +20,11 @@
 //
 
 #import "NSArray+GDJsonArray.h"
-#import "java/lang/ClassCastException.h"
 #import "java/lang/UnsupportedOperationException.h"
 
 @implementation NSArray (GDJsonArray)
 
 #pragma mark - JsonElement
-- (id<GDJsonArray>)asArray {
-  return self;
-}
-- (id<GDJsonObject>)asObject {
-  @throw [[JavaLangClassCastException alloc] init];
-}
 - (BOOL)isArray {
   return YES;
 }
@@ -43,6 +36,9 @@
 }
 -(NSString *)description {
   return [self toJsonString];
+}
+-(id<GDJsonArray>)copy__ {
+  return [GDJson copy:self];
 }
 
 #pragma mark - JsonArray

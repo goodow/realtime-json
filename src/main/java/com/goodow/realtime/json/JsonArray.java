@@ -20,7 +20,13 @@ public interface JsonArray extends JsonElement {
   /**
    * Removes all values from the array.
    */
+  @Override
+  @SuppressWarnings("unchecked")
   JsonArray clear();
+
+  @SuppressWarnings("unchecked")
+  @Override
+  JsonArray copy();
 
   /**
    * Return the ith element of the array.

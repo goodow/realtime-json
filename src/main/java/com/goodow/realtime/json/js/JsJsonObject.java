@@ -23,6 +23,8 @@ import com.google.gwt.core.client.JsArrayString;
  * Client-side implementation of JsonObject interface.
  */
 public final class JsJsonObject extends JsJsonElement implements JsonObject {
+  private static final long serialVersionUID = -5864296191395989510L;
+
   public static JsJsonObject create() {
     return JavaScriptObject.createObject().cast();
   }
@@ -30,6 +32,7 @@ public final class JsJsonObject extends JsJsonElement implements JsonObject {
   protected JsJsonObject() {
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   // @formatter:off
   public native JsJsonObject clear() /*-{
@@ -42,6 +45,13 @@ public final class JsJsonObject extends JsJsonElement implements JsonObject {
   }-*/;
   // @formatter:on
 
+  @SuppressWarnings("unchecked")
+  @Override
+  public JsonObject copy() {
+    return JsJsonElement.copy(this);
+  }
+
+  @SuppressWarnings("unchecked")
   @Override
   public JsJsonElement get(String key) {
     return get0(key).cast();

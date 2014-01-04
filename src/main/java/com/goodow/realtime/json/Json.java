@@ -13,31 +13,27 @@
  */
 package com.goodow.realtime.json;
 
-import com.goodow.realtime.json.impl.JacksonUtil;
-import com.goodow.realtime.json.impl.JreJsonArray;
-import com.goodow.realtime.json.impl.JreJsonObject;
+import com.goodow.realtime.json.impl.JreJsonFactory;
 
-import java.util.List;
-import java.util.Map;
-
+/**
+ * Vends out implementation of JsonFactory.
+ */
 public class Json {
+  private static JsonFactory FACTORY = new JreJsonFactory();
+
   public static JsonArray createArray() {
-    return new JreJsonArray();
+    return FACTORY.createArray();
   }
 
   public static JsonObject createObject() {
-    return new JreJsonObject();
+    return FACTORY.createObject();
   }
 
-  @SuppressWarnings("unchecked")
   public static <T> T parse(String jsonString) {
-    Object value = JacksonUtil.decodeValue(jsonString, Object.class);
-    if (value instanceof Map) {
-      return (T) new JreJsonObject((Map<String, Object>) value);
-    } else if (value instanceof List) {
-      return (T) new JreJsonArray((List<Object>) value);
-    } else {
-      return (T) value;
-    }
+    return FACTORY.parse(jsonString);
+  }
+
+  public static void setFactory(JsonFactory factory) {
+    FACTORY = factory;
   }
 }

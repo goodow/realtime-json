@@ -20,7 +20,13 @@ public interface JsonObject extends JsonElement {
   /**
    * Removes all entries.
    */
+  @Override
+  @SuppressWarnings("unchecked")
   JsonObject clear();
+
+  @SuppressWarnings("unchecked")
+  @Override
+  JsonObject copy();
 
   /**
    * Return the element (uncoerced) as a value.

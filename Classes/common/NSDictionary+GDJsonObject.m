@@ -21,7 +21,6 @@
 
 #import "NSDictionary+GDJsonObject.h"
 #import "IOSClass.h"
-#import "java/lang/ClassCastException.h"
 #import "java/lang/UnsupportedOperationException.h"
 
 @implementation NSDictionary (GDJsonObject)
@@ -39,11 +38,8 @@
 -(NSString *)description {
   return [self toJsonString];
 }
-- (id<GDJsonArray>)asArray {
-  @throw [[JavaLangClassCastException alloc] init];
-}
-- (id<GDJsonObject>)asObject {
-  return self;
+-(id)copy__ {
+  return [GDJson copy:self];
 }
 
 #pragma mark - JsonObject

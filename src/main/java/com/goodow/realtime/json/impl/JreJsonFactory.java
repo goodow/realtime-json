@@ -11,30 +11,36 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.goodow.realtime.json;
+package com.goodow.realtime.json.impl;
 
 import com.goodow.realtime.json.JsonArray;
 import com.goodow.realtime.json.JsonFactory;
 import com.goodow.realtime.json.JsonObject;
-import com.goodow.realtime.json.js.JsJsonFactory;
-import com.google.gwt.core.client.GwtScriptOnly;
 
-/**
- * Vends out implementation of JsonFactory.
- */
-@GwtScriptOnly
-public class Json {
-  private static final JsonFactory FACTORY = new JsJsonFactory();
+import java.util.List;
+import java.util.Map;
 
-  public static JsonArray createArray() {
-    return FACTORY.createArray();
+public class JreJsonFactory implements JsonFactory {
+  @Override
+  public JsonArray createArray() {
+    return new JreJsonArray();
   }
 
-  public static JsonObject createObject() {
-    return FACTORY.createObject();
+  @Override
+  public JsonObject createObject() {
+    return new JreJsonObject();
   }
 
-  public static <T> T parse(String jsonString) {
-    return FACTORY.parse(jsonString);
+  @Override
+  @SuppressWarnings("unchecked")
+  public <T> T parse(String jsonString) {
+    Object value = JacksonUtil.decodeValue(jsonString, Object.class);
+    if (value instanceof Map) {
+      return (T) new JreJsonObject((Map<String, Object>) value);
+    } else if (value instanceof List) {
+      return (T) new JreJsonArray((List<Object>) value);
+    } else {
+      return (T) value;
+    }
   }
 }

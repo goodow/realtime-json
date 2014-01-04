@@ -25,7 +25,26 @@ import java.util.Map;
  */
 public class JreJsonObject extends JreJsonElement implements JsonObject {
   private static final long serialVersionUID = -2848796364089017455L;
-  final Map<String, Object> map;
+
+  @SuppressWarnings("unchecked")
+  static Map<String, Object> convertMap(Map<String, Object> map) {
+    Map<String, Object> converted = new LinkedHashMap<String, Object>(map.size());
+    for (Map.Entry<String, Object> entry : map.entrySet()) {
+      Object obj = entry.getValue();
+      if (obj instanceof Map) {
+        Map<String, Object> jm = (Map<String, Object>) obj;
+        converted.put(entry.getKey(), convertMap(jm));
+      } else if (obj instanceof List) {
+        List<Object> list = (List<Object>) obj;
+        converted.put(entry.getKey(), JreJsonArray.convertList(list));
+      } else {
+        converted.put(entry.getKey(), obj);
+      }
+    }
+    return converted;
+  }
+
+  protected Map<String, Object> map;
 
   public JreJsonObject() {
     this.map = new LinkedHashMap<String, Object>();
@@ -39,10 +58,25 @@ public class JreJsonObject extends JreJsonElement implements JsonObject {
     map = JacksonUtil.decodeValue(jsonString, Map.class);
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public JsonObject clear() {
-    map.clear();
+    if (needsCopy) {
+      map = new LinkedHashMap<String, Object>();
+      needsCopy = false;
+    } else {
+      map.clear();
+    }
     return this;
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  public JsonObject copy() {
+    JreJsonObject copy = new JreJsonObject(map);
+    // We actually do the copy lazily if the object is subsequently mutated
+    copy.needsCopy = true;
+    return copy;
   }
 
   @Override
@@ -133,24 +167,28 @@ public class JreJsonObject extends JreJsonElement implements JsonObject {
 
   @Override
   public JsonObject remove(String key) {
+    checkCopy();
     map.remove(key);
     return this;
   }
 
   @Override
   public JsonObject set(String key, boolean bool_) {
+    checkCopy();
     map.put(key, bool_);
     return this;
   }
 
   @Override
   public JsonObject set(String key, double number) {
+    checkCopy();
     map.put(key, number);
     return this;
   }
 
   @Override
   public JsonObject set(String key, Object value) {
+    checkCopy();
     if (value instanceof JreJsonObject) {
       value = ((JreJsonObject) value).map;
     } else if (value instanceof JreJsonArray) {
@@ -163,5 +201,18 @@ public class JreJsonObject extends JreJsonElement implements JsonObject {
   @Override
   public String toJsonString() {
     return JacksonUtil.encode(this.map);
+  }
+
+  @Override
+  public Map<String, Object> toNative() {
+    return map;
+  }
+
+  private void checkCopy() {
+    if (needsCopy) {
+      // deep copy the map lazily if the object is mutated
+      map = convertMap(map);
+      needsCopy = false;
+    }
   }
 }
