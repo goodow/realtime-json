@@ -11,10 +11,13 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.goodow.realtime.json.impl;
+package com.goodow.realtime.json.impl.xml;
 
 import com.goodow.realtime.json.JsonElement;
 import com.goodow.realtime.json.JsonException;
+import com.goodow.realtime.json.impl.JreJsonArray;
+import com.goodow.realtime.json.impl.JreJsonElement;
+import com.goodow.realtime.json.impl.JreJsonObject;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.JacksonXmlModule;
@@ -24,10 +27,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Xml {
-  private static final JacksonXmlModule module = new JacksonXmlModule();
+  private static final JacksonXmlModule module = new XmlModule();
   private static final XmlMapper mapper;
   static {
-    module.setDefaultUseWrapper(false);
+    // module.setDefaultUseWrapper(true);
     mapper = new XmlMapper(module);
   }
 
