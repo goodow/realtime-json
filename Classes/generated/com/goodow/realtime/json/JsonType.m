@@ -75,8 +75,11 @@ IOSObjectArray *GDJsonTypeEnum_values;
 }
 
 + (J2ObjcClassInfo *)__metadata {
-  static const char *superclass_type_args[] = {"LGDJsonTypeEnum"};
-  static J2ObjcClassInfo _GDJsonTypeEnum = { "JsonType", "com.goodow.realtime.json", NULL, 0x4011, 0, NULL, 0, NULL, 1, superclass_type_args};
+  static J2ObjcMethodInfo methods[] = {
+    { "init", NULL, NULL, 0x1, NULL },
+  };
+  static const char *superclass_type_args[] = {"Lcom.goodow.realtime.json.JsonType;"};
+  static J2ObjcClassInfo _GDJsonTypeEnum = { "JsonType", "com.goodow.realtime.json", NULL, 0x4011, 1, methods, 0, NULL, 1, superclass_type_args};
   return &_GDJsonTypeEnum;
 }
 

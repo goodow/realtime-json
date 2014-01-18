@@ -15,11 +15,11 @@
 
 + (J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { "clear", NULL, "TT", 0x401, NULL },
-    { "copy__", NULL, "TT", 0x401, NULL },
+    { "clear", NULL, "TT;", 0x401, NULL },
+    { "copy__", "copy", "TT;", 0x401, NULL },
     { "isArray", NULL, "Z", 0x401, NULL },
     { "isObject", NULL, "Z", 0x401, NULL },
-    { "toJsonString", NULL, "LNSString", 0x401, NULL },
+    { "toJsonString", NULL, "Ljava.lang.String;", 0x401, NULL },
   };
   static J2ObjcClassInfo _GDJsonElement = { "JsonElement", "com.goodow.realtime.json", NULL, 0x201, 5, methods, 0, NULL, 0, NULL};
   return &_GDJsonElement;

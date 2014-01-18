@@ -17,9 +17,9 @@
 
 + (J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { "createArray", NULL, "LGDJsonArray", 0x401, NULL },
-    { "createObject", NULL, "LGDJsonObject", 0x401, NULL },
-    { "parseWithNSString:", NULL, "TT", 0x401, NULL },
+    { "createArray", NULL, "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
+    { "createObject", NULL, "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
+    { "parseWithNSString:", "parse", "TT;", 0x401, NULL },
   };
   static J2ObjcClassInfo _GDJsonFactory = { "JsonFactory", "com.goodow.realtime.json", NULL, 0x201, 3, methods, 0, NULL, 0, NULL};
   return &_GDJsonFactory;

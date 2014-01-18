@@ -17,11 +17,24 @@
 
 + (J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { "clear", NULL, "LGDJsonArray", 0x401, NULL },
-    { "copy__", NULL, "LGDJsonArray", 0x401, NULL },
-    { "getWithInt:", NULL, "TT", 0x401, NULL },
+    { "clear", NULL, "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
+    { "copy__", "copy", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
+    { "getWithInt:", "get", "TT;", 0x401, NULL },
+    { "getArray:", "getArray", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
+    { "getBoolean:", "getBoolean", "Z", 0x401, NULL },
+    { "getNumber:", "getNumber", "D", 0x401, NULL },
+    { "getObject:", "getObject", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
+    { "getString:", "getString", "Ljava.lang.String;", 0x401, NULL },
+    { "getType:", "getType", "Lcom.goodow.realtime.json.JsonType;", 0x401, NULL },
+    { "indexOfObject:", "indexOf", "I", 0x401, NULL },
+    { "insert:value:", "insert", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
+    { "count", "length", "I", 0x401, NULL },
+    { "pushBoolean:", "push", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
+    { "pushNumber:", "push", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
+    { "push:", "push", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
+    { "remove:", "remove", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
   };
-  static J2ObjcClassInfo _GDJsonArray = { "JsonArray", "com.goodow.realtime.json", NULL, 0x201, 3, methods, 0, NULL, 0, NULL};
+  static J2ObjcClassInfo _GDJsonArray = { "JsonArray", "com.goodow.realtime.json", NULL, 0x201, 16, methods, 0, NULL, 0, NULL};
   return &_GDJsonArray;
 }
 

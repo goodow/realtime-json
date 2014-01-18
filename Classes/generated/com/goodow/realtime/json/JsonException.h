@@ -11,11 +11,12 @@
 #import "JreEmulation.h"
 #include "java/lang/RuntimeException.h"
 
-#define GDJsonException_serialVersionUID 5592603246082277358
+#define GDJsonException_serialVersionUID 5592603246082277358LL
 
 @interface GDJsonException : JavaLangRuntimeException {
 }
 
++ (long long int)serialVersionUID;
 - (id)init;
 - (id)initWithNSString:(NSString *)message;
 @end

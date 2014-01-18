@@ -9,6 +9,10 @@
 
 @implementation GDJsonException
 
++ (long long int)serialVersionUID {
+  return GDJsonException_serialVersionUID;
+}
+
 - (id)init {
   return [super init];
 }
@@ -18,7 +22,14 @@
 }
 
 + (J2ObjcClassInfo *)__metadata {
-  static J2ObjcClassInfo _GDJsonException = { "JsonException", "com.goodow.realtime.json", NULL, 0x1, 0, NULL, 0, NULL, 0, NULL};
+  static J2ObjcMethodInfo methods[] = {
+    { "init", "JsonException", NULL, 0x1, NULL },
+    { "initWithNSString:", "JsonException", NULL, 0x1, NULL },
+  };
+  static J2ObjcFieldInfo fields[] = {
+    { "serialVersionUID_", NULL, 0x1a, "J" },
+  };
+  static J2ObjcClassInfo _GDJsonException = { "JsonException", "com.goodow.realtime.json", NULL, 0x1, 2, methods, 1, fields, 0, NULL};
   return &_GDJsonException;
 }
 
