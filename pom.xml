@@ -3,7 +3,7 @@
   <parent>
     <groupId>com.goodow.realtime</groupId>
     <artifactId>realtime-parent</artifactId>
-    <version>0.5.1-SNAPSHOT</version>
+    <version>0.5.5-SNAPSHOT</version>
   </parent>
   <artifactId>realtime-json</artifactId>
   <url>https://github.com/goodow/realtime-json/</url>
@@ -29,7 +29,7 @@
       <groupId>com.fasterxml.jackson.dataformat</groupId>
       <artifactId>jackson-dataformat-xml</artifactId>
       <optional>true</optional>
-	</dependency>
+    </dependency>
     
     <dependency>
       <groupId>com.google.gwt</groupId>

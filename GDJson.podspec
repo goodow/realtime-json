@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "GDJson"
-  s.version      = "0.5.0"
+  s.version      = "0.5.5"
   s.license      = { :type => 'Apache 2.0', :file => 'LICENSE' }
   s.summary      = "Minimalistic JSON library for Java/Android/iOS/GWT/J2ObjC"
   s.homepage     = "https://github.com/goodow/realtime-json"
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.header_mappings_dir = 'Classes/generated'
   
   s.source_files = 'Classes/common', 'Classes/generated/**/*.{h,m}'
-  s.dependency 'J2ObjC', '~> 0.8.8'
+  s.dependency 'J2ObjC', '~> 0.8'
   # Pods-GDJson target need the next line.
   s.xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/J2ObjC/dist/include"' }
 end
