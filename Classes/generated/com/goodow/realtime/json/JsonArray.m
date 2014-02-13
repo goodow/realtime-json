@@ -26,7 +26,7 @@
     { "getObject:", "getObject", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
     { "getString:", "getString", "Ljava.lang.String;", 0x401, NULL },
     { "getType:", "getType", "Lcom.goodow.realtime.json.JsonType;", 0x401, NULL },
-    { "indexOfObject:", "indexOf", "I", 0x401, NULL },
+    { "indexOf:", "indexOf", "I", 0x401, NULL },
     { "insert:value:", "insert", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
     { "count", "length", "I", 0x401, NULL },
     { "pushBoolean:", "push", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },

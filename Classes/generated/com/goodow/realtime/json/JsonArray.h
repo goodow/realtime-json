@@ -24,7 +24,7 @@
 - (id<GDJsonObject>)getObject:(int)index;
 - (NSString *)getString:(int)index;
 - (GDJsonTypeEnum *)getType:(int)index;
-- (int)indexOfObject:(id)value;
+- (int)indexOf:(id)value;
 - (id<GDJsonArray>)insert:(int)index value:(id)value;
 - (int)count;
 - (id<GDJsonArray>)pushBoolean:(BOOL)bool_;

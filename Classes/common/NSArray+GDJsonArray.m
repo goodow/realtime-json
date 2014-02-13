@@ -69,6 +69,11 @@
   return [GDJson getType:[self get:index]];
 }
 
+-(int)indexOf:(id)value {
+  NSUInteger idx = [self indexOfObject:value];
+  return idx == NSNotFound ? -1 : (int)idx;
+}
+
 #pragma mark - Mutable JsonArray
 - (id<GDJsonArray>)insert:(int)index value:(id)value {
   @throw [[JavaLangUnsupportedOperationException alloc] init];
