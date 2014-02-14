@@ -17,6 +17,10 @@ package com.goodow.realtime.json;
  * Represents a Json array.
  */
 public interface JsonArray extends JsonElement {
+  public interface Iterator<T> {
+    void call(int index, T value);
+  }
+
   /**
    * Removes all values from the array.
    */
@@ -27,6 +31,11 @@ public interface JsonArray extends JsonElement {
   @SuppressWarnings("unchecked")
   @Override
   JsonArray copy();
+
+  /**
+   * Calls a function for each element in an array.
+   */
+  <T> void forEach(Iterator<T> handler);
 
   /**
    * Return the ith element of the array.

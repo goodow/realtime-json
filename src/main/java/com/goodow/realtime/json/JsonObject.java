@@ -18,6 +18,13 @@ package com.goodow.realtime.json;
  */
 public interface JsonObject extends JsonElement {
   /**
+   * Callback to support iterating through the values on this object.
+   */
+  public interface Iterator<T> {
+    void call(String key, T value);
+  }
+
+  /**
    * Removes all entries.
    */
   @Override
@@ -27,6 +34,17 @@ public interface JsonObject extends JsonElement {
   @SuppressWarnings("unchecked")
   @Override
   JsonObject copy();
+
+  /**
+   * Method for iterating through the contents of an object.
+   * 
+   * <p>
+   * {@code T} is the expected type of the values returned from the map. <b>Caveat:</b> if you have
+   * a map of heterogeneous types, you need to think what value of T you specify here.
+   * 
+   * @param handler The callback object that gets called on each iteration.
+   */
+  <T> void forEach(Iterator<T> handler);
 
   /**
    * Return the element (uncoerced) as a value.
@@ -99,4 +117,9 @@ public interface JsonObject extends JsonElement {
    * Set a given key to the given value.
    */
   JsonObject set(String key, Object value);
+
+  /**
+   * The number of keys in the object.
+   */
+  int size();
 }

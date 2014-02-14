@@ -69,9 +69,15 @@
   return [GDJson getType:[self get:index]];
 }
 
--(int)indexOf:(id)value {
+- (int)indexOf:(id)value {
   NSUInteger idx = [self indexOfObject:value];
   return idx == NSNotFound ? -1 : (int)idx;
+}
+- (void)forEach:(id<GDJsonArray_Iterator>)handler {
+  int idx = 0;
+  for (id value in self) {
+    [handler callWithInt:idx++ withId:value];
+  }
 }
 
 #pragma mark - Mutable JsonArray

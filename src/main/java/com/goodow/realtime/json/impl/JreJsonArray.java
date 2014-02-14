@@ -17,7 +17,6 @@ import com.goodow.realtime.json.JsonArray;
 import com.goodow.realtime.json.JsonType;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -74,13 +73,15 @@ public class JreJsonArray extends JreJsonElement implements JsonArray {
     JreJsonArray copy = new JreJsonArray(list);
     // We actually do the copy lazily if the object is subsequently mutated
     copy.needsCopy = true;
+    needsCopy = true;
     return copy;
   }
 
   @Override
   public boolean equals(Object o) {
-    if (this == o)
+    if (this == o) {
       return true;
+    }
 
     if (o == null || getClass() != o.getClass()) {
       return false;
@@ -92,26 +93,32 @@ public class JreJsonArray extends JreJsonElement implements JsonArray {
       return false;
     }
 
-    Iterator<?> iter = that.list.iterator();
+    java.util.Iterator<?> iter = that.list.iterator();
     for (Object entry : this.list) {
       Object other = iter.next();
-      if (!entry.equals(other)) {
+      if (entry == null) {
+        if (other != null) {
+          return false;
+        }
+      } else if (!entry.equals(other)) {
         return false;
       }
     }
     return true;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
-  @SuppressWarnings({"unchecked", "rawtypes"})
-  public <T> T get(int index) {
-    Object value = list.get(index);
-    if (value instanceof Map) {
-      value = new JreJsonObject((Map) value);
-    } else if (value instanceof List) {
-      value = new JreJsonArray((List) value);
+  public <T> void forEach(Iterator<T> handler) {
+    int i = 0;
+    for (Object value : list) {
+      handler.call(i++, (T) get(value));
     }
-    return (T) value;
+  }
+
+  @Override
+  public <T> T get(int index) {
+    return get(list.get(index));
   }
 
   @Override
@@ -205,12 +212,17 @@ public class JreJsonArray extends JreJsonElement implements JsonArray {
 
   @Override
   public String toJsonString() {
-    return JacksonUtil.encode(this.list);
+    return JacksonUtil.encode(list);
   }
 
   @Override
   public List<Object> toNative() {
     return list;
+  }
+
+  @Override
+  public String toString() {
+    return toJsonString();
   }
 
   private void checkCopy() {
@@ -219,5 +231,15 @@ public class JreJsonArray extends JreJsonElement implements JsonArray {
       list = convertList(list);
       needsCopy = false;
     }
+  }
+
+  @SuppressWarnings({"unchecked", "rawtypes"})
+  private <T> T get(Object value) {
+    if (value instanceof Map) {
+      value = new JreJsonObject((Map) value);
+    } else if (value instanceof List) {
+      value = new JreJsonArray((List) value);
+    }
+    return (T) value;
   }
 }

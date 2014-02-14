@@ -9,6 +9,7 @@
 #define _GDJsonArray_H_
 
 @class GDJsonTypeEnum;
+@protocol GDJsonArray_Iterator;
 @protocol GDJsonObject;
 
 #import "JreEmulation.h"
@@ -17,6 +18,7 @@
 @protocol GDJsonArray < GDJsonElement, NSObject, JavaObject >
 - (id<GDJsonArray>)clear;
 - (id<GDJsonArray>)copy__ OBJC_METHOD_FAMILY_NONE;
+- (void)forEach:(id<GDJsonArray_Iterator>)handler;
 - (id)getWithInt:(int)index;
 - (id<GDJsonArray>)getArray:(int)index;
 - (BOOL)getBoolean:(int)index;
@@ -34,5 +36,10 @@
 @end
 
 #define ComGoodowRealtimeJsonJsonArray GDJsonArray
+
+@protocol GDJsonArray_Iterator < NSObject, JavaObject >
+- (void)callWithInt:(int)index
+             withId:(id)value;
+@end
 
 #endif // _GDJsonArray_H_

@@ -1,9 +1,9 @@
 PODS:
   - GDJson (0.5.5):
     - J2ObjC (~> 0.8)
-  - J2ObjC (0.8.8):
+  - J2ObjC (0.9):
     - J2ObjC/lib/jre
-  - J2ObjC/lib/jre (0.8.8)
+  - J2ObjC/lib/jre (0.9)
 
 DEPENDENCIES:
   - GDJson (from `..`)
@@ -14,6 +14,6 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   GDJson: 30bdbae9abedc68fcb589b7d6dae0fd0804aa982
-  J2ObjC: eed03a6ebf1a8c0fb1ed15d5edbded36959366dd
+  J2ObjC: 45d67e0e2ab5c3c0befbcac6f515dade0e8f5d78
 
 COCOAPODS: 0.29.0

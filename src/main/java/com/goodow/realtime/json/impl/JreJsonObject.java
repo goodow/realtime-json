@@ -76,13 +76,15 @@ public class JreJsonObject extends JreJsonElement implements JsonObject {
     JreJsonObject copy = new JreJsonObject(map);
     // We actually do the copy lazily if the object is subsequently mutated
     copy.needsCopy = true;
+    needsCopy = true;
     return copy;
   }
 
   @Override
   public boolean equals(Object o) {
-    if (this == o)
+    if (this == o) {
       return true;
+    }
 
     if (o == null || getClass() != o.getClass()) {
       return false;
@@ -107,6 +109,14 @@ public class JreJsonObject extends JreJsonElement implements JsonObject {
       }
     }
     return true;
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  public <T> void forEach(Iterator<T> handler) {
+    for (String key : map.keySet()) {
+      handler.call(key, (T) get(key));
+    }
   }
 
   @SuppressWarnings({"unchecked", "rawtypes"})
@@ -199,13 +209,23 @@ public class JreJsonObject extends JreJsonElement implements JsonObject {
   }
 
   @Override
+  public int size() {
+    return map.size();
+  }
+
+  @Override
   public String toJsonString() {
-    return JacksonUtil.encode(this.map);
+    return JacksonUtil.encode(map);
   }
 
   @Override
   public Map<String, Object> toNative() {
     return map;
+  }
+
+  @Override
+  public String toString() {
+    return toJsonString();
   }
 
   private void checkCopy() {

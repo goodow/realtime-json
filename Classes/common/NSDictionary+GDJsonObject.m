@@ -76,6 +76,11 @@
 - (IOSObjectArray *)keys {
   return [IOSObjectArray arrayWithNSArray:[self allKeys] type:[IOSClass classWithClass:[NSString class]]];
 }
+- (void)forEach:(id<GDJsonObject_Iterator>)handler {
+  for (NSString *key in self) {
+    [handler callWithNSString:key withId:self[key]];
+  }
+}
 
 #pragma mark - Mutable JsonObject
 - (id<GDJsonObject>)set:(NSString *)key boolean:(BOOL)bool_ {

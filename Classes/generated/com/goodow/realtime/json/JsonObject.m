@@ -20,6 +20,7 @@
   static J2ObjcMethodInfo methods[] = {
     { "clear", NULL, "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
     { "copy__", "copy", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
+    { "forEach:", "forEach", "V", 0x401, NULL },
     { "getWithNSString:", "get", "TT;", 0x401, NULL },
     { "getArray:", "getArray", "Lcom.goodow.realtime.json.JsonArray;", 0x401, NULL },
     { "getBoolean:", "getBoolean", "Z", 0x401, NULL },
@@ -33,9 +34,25 @@
     { "set:boolean:", "set", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
     { "set:number:", "set", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
     { "set:value:", "set", "Lcom.goodow.realtime.json.JsonObject;", 0x401, NULL },
+    { "count", "size", "I", 0x401, NULL },
   };
-  static J2ObjcClassInfo _GDJsonObject = { "JsonObject", "com.goodow.realtime.json", NULL, 0x201, 15, methods, 0, NULL, 0, NULL};
+  static J2ObjcClassInfo _GDJsonObject = { "JsonObject", "com.goodow.realtime.json", NULL, 0x201, 17, methods, 0, NULL, 0, NULL};
   return &_GDJsonObject;
+}
+
+@end
+
+@interface GDJsonObject_Iterator : NSObject
+@end
+
+@implementation GDJsonObject_Iterator
+
++ (J2ObjcClassInfo *)__metadata {
+  static J2ObjcMethodInfo methods[] = {
+    { "callWithNSString:withId:", "call", "V", 0x401, NULL },
+  };
+  static J2ObjcClassInfo _GDJsonObject_Iterator = { "Iterator", "com.goodow.realtime.json", "JsonObject", 0x209, 1, methods, 0, NULL, 0, NULL};
+  return &_GDJsonObject_Iterator;
 }
 
 @end

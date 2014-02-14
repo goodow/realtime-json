@@ -51,6 +51,19 @@ public final class JsJsonObject extends JsJsonElement implements JsonObject {
     return JsJsonElement.copy(this);
   }
 
+  @Override
+  // @formatter:off
+  public native <T> void forEach(Iterator<T> handler) /*-{
+    for (key in this) {
+      if (Object.prototype.hasOwnProperty.call(this, key)) {
+        handler.
+        @com.goodow.realtime.json.JsonObject.Iterator::call(Ljava/lang/String;Ljava/lang/Object;)
+        (key, this[key]);
+      }
+    }
+  }-*/;
+  // @formatter:on
+
   @SuppressWarnings("unchecked")
   @Override
   public JsJsonElement get(String key) {
@@ -110,7 +123,7 @@ public final class JsJsonObject extends JsJsonElement implements JsonObject {
     delete this[key];
     return this;
   }-*/;
-  
+
   @Override
   public native JsonObject set(String key, boolean bool_) /*-{
     this[key] = Object(bool_);
@@ -124,9 +137,28 @@ public final class JsJsonObject extends JsJsonElement implements JsonObject {
   }-*/;
 
   @Override
+  // TODO: We still have problem with "__proto__"
   public native JsonObject set(String key, Object element) /*-{
     this[key] = element;
     return this;
+  }-*/;
+
+  /**
+   * Returns the size of the map (the number of keys).
+   *
+   * <p>NB: This method is currently O(N) because it iterates over all keys.
+   *
+   * @return the size of the map.
+   */
+  @Override
+  public final native int size() /*-{
+    size = 0;
+    for (key in this) {
+      if (Object.prototype.hasOwnProperty.call(this, key)) {
+        size++;
+      }
+    }
+    return size;
   }-*/;
 
   private native JsJsonValue get0(String key) /*-{
