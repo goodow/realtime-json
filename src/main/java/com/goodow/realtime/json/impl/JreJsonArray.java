@@ -109,7 +109,7 @@ public class JreJsonArray extends JreJsonElement implements JsonArray {
 
   @SuppressWarnings("unchecked")
   @Override
-  public <T> void forEach(Iterator<T> handler) {
+  public <T> void forEach(ListIterator<T> handler) {
     int i = 0;
     for (Object value : list) {
       handler.call(i++, (T) get(value));
@@ -215,9 +215,10 @@ public class JreJsonArray extends JreJsonElement implements JsonArray {
     return JacksonUtil.encode(list);
   }
 
+  @SuppressWarnings("unchecked")
   @Override
-  public List<Object> toNative() {
-    return list;
+  public <T> List<T> toNative() {
+    return (List<T>) list;
   }
 
   @Override

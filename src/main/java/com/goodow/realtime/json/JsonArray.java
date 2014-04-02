@@ -17,7 +17,7 @@ package com.goodow.realtime.json;
  * Represents a Json array.
  */
 public interface JsonArray extends JsonElement {
-  public interface Iterator<T> {
+  public interface ListIterator<T> {
     void call(int index, T value);
   }
 
@@ -35,7 +35,7 @@ public interface JsonArray extends JsonElement {
   /**
    * Calls a function for each element in an array.
    */
-  <T> void forEach(Iterator<T> handler);
+  <T> void forEach(ListIterator<T> handler);
 
   /**
    * Return the ith element of the array.

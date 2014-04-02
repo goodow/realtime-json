@@ -113,7 +113,7 @@ public class JreJsonObject extends JreJsonElement implements JsonObject {
 
   @SuppressWarnings("unchecked")
   @Override
-  public <T> void forEach(Iterator<T> handler) {
+  public <T> void forEach(MapIterator<T> handler) {
     for (String key : map.keySet()) {
       handler.call(key, (T) get(key));
     }
@@ -218,9 +218,10 @@ public class JreJsonObject extends JreJsonElement implements JsonObject {
     return JacksonUtil.encode(map);
   }
 
+  @SuppressWarnings("unchecked")
   @Override
-  public Map<String, Object> toNative() {
-    return map;
+  public <T> Map<String, T> toNative() {
+    return (Map<String, T>) map;
   }
 
   @Override

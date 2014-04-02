@@ -20,7 +20,7 @@ public interface JsonObject extends JsonElement {
   /**
    * Callback to support iterating through the values on this object.
    */
-  public interface Iterator<T> {
+  public interface MapIterator<T> {
     void call(String key, T value);
   }
 
@@ -44,7 +44,7 @@ public interface JsonObject extends JsonElement {
    * 
    * @param handler The callback object that gets called on each iteration.
    */
-  <T> void forEach(Iterator<T> handler);
+  <T> void forEach(MapIterator<T> handler);
 
   /**
    * Return the element (uncoerced) as a value.

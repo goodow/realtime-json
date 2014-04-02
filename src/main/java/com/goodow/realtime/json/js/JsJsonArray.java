@@ -48,18 +48,18 @@ public final class JsJsonArray extends JsJsonElement implements JsonArray {
 
   @Override
   // @formatter:off
-  public native <T> void forEach(Iterator<T> handler) /*-{
+  public native <T> void forEach(ListIterator<T> handler) /*-{
     if (Array.prototype.forEach) {
       Array.prototype.forEach.call(this, function(item, index, array) {
         handler.
-        @com.goodow.realtime.json.JsonArray.Iterator::call(ILjava/lang/Object;)
+        @com.goodow.realtime.json.JsonArray.ListIterator::call(ILjava/lang/Object;)
         (index, item);
       });
     } else {
       var len = this.length;  // must be fixed during loop...
       for (var i = 0; i < len; i++) {
         handler.
-        @com.goodow.realtime.json.JsonArray.Iterator::call(ILjava/lang/Object;)
+        @com.goodow.realtime.json.JsonArray.ListIterator::call(ILjava/lang/Object;)
         (i, this[i]);
       }
     }

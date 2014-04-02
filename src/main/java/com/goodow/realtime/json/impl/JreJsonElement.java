@@ -35,7 +35,7 @@ public abstract class JreJsonElement implements JsonElement {
     return this instanceof JreJsonObject;
   }
 
-  public abstract Object toNative();
+  public abstract <T> Object toNative();
 
   @Override
   public String toString() {

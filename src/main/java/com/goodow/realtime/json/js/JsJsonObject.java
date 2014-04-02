@@ -53,11 +53,11 @@ public final class JsJsonObject extends JsJsonElement implements JsonObject {
 
   @Override
   // @formatter:off
-  public native <T> void forEach(Iterator<T> handler) /*-{
+  public native <T> void forEach(MapIterator<T> handler) /*-{
     for (key in this) {
       if (Object.prototype.hasOwnProperty.call(this, key)) {
         handler.
-        @com.goodow.realtime.json.JsonObject.Iterator::call(Ljava/lang/String;Ljava/lang/Object;)
+        @com.goodow.realtime.json.JsonObject.MapIterator::call(Ljava/lang/String;Ljava/lang/Object;)
         (key, this[key]);
       }
     }
