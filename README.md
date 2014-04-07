@@ -1,4 +1,4 @@
-GDJson
+realtime-json [![Build Status](https://travis-ci.org/goodow/realtime-json.svg?branch=master)](https://travis-ci.org/goodow/realtime-json)
 ======
 
 Minimalistic JSON library for Java/Android/iOS/GWT/J2ObjC
