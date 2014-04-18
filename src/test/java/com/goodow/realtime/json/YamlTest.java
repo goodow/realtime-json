@@ -13,23 +13,23 @@
  */
 package com.goodow.realtime.json;
 
-import com.goodow.realtime.json.impl.JacksonUtil;
+import com.goodow.realtime.json.util.Yaml;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-public class JsonObjectTest {
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
+public class YamlTest {
   @Test
-  public void testNumber() {
-    JsonObject obj = Json.createObject();
-    Number num = 6.3;
-    obj.set("num1", 3.3);
-    obj.set("num2", num);
-    Assert.assertEquals(3.3, obj.getNumber("num1"), 0.01);
-    Assert.assertEquals(6.3, obj.getNumber("num2"), 0.01);
-    JsonElement parse = Json.parse("{}");
+  public void testParse() throws FileNotFoundException {
+    String yaml =
+        new Scanner(getClass().getResourceAsStream("/sample.yaml")).useDelimiter("\\Z").next();
+    JsonElement json = Yaml.parse(yaml);
+    String jsonString = json.toJsonString();
 
-    Object decodeValue = JacksonUtil.decodeValue(" {} ", Object.class);
+    JsonObject obj =
+        Json.createObject().set("a", "3").set("alist", Json.createArray().push("b").push("c"));
+    String yaml2 = Yaml.toYaml(obj);
   }
 }

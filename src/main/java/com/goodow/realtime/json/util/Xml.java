@@ -11,7 +11,7 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.goodow.realtime.json.impl.xml;
+package com.goodow.realtime.json.util;
 
 import com.goodow.realtime.json.JsonElement;
 import com.goodow.realtime.json.JsonException;

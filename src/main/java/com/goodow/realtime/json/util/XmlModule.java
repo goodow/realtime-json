@@ -1,4 +1,4 @@
-package com.goodow.realtime.json.impl.xml;
+package com.goodow.realtime.json.util;
 
 import com.fasterxml.jackson.dataformat.xml.JacksonXmlModule;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;

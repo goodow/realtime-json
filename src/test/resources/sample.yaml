@@ -1,0 +1,18 @@
+settings:
+  index:
+    number_of_shards: 3
+    number_of_replicas: 1
+    analysis:
+      analyzer:
+        ik:
+          alias: [ik_analyzer]
+          type: org.elasticsearch.index.analysis.IkAnalyzerProvider
+        ik_max_word: 
+          type: ik
+          use_smart: false
+        ik_smart:
+          type: ik
+          use_smart: true
+        default:
+          type: ik
+          use_smart: false
