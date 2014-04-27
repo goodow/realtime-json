@@ -203,11 +203,11 @@ public class JreJsonArray extends JreJsonElement implements JsonArray {
     return this;
   }
 
+  @SuppressWarnings("unchecked")
   @Override
-  public JsonArray remove(int index) {
+  public <T> T remove(int index) {
     checkCopy();
-    list.remove(index);
-    return this;
+    return (T) list.remove(index);
   }
 
   @Override

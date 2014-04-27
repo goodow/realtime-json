@@ -110,5 +110,5 @@ public interface JsonArray extends JsonElement {
   /**
    * Remove an element of the array at a particular index.
    */
-  JsonArray remove(int index);
+  <T> T remove(int index);
 }

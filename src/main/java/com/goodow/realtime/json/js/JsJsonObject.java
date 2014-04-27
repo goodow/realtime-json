@@ -119,9 +119,10 @@ public final class JsJsonObject extends JsJsonElement implements JsonObject {
 
   @Override
   // @formatter:off
-  public native JsonObject remove(String key) /*-{
+  public native <T> T remove(String key) /*-{
+    toRtn = this[key];
     delete this[key];
-    return this;
+    return toRtn;
   }-*/;
 
   @Override

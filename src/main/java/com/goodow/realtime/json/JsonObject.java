@@ -101,7 +101,7 @@ public interface JsonObject extends JsonElement {
    * 
    * @param key
    */
-  JsonObject remove(String key);
+  <T> T remove(String key);
 
   /**
    * Set a given key to the given boolean value.

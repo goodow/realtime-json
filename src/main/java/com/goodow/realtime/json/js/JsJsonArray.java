@@ -142,9 +142,8 @@ public final class JsJsonArray extends JsJsonElement implements JsonArray {
   }-*/;
 
   @Override
-  public native JsonArray remove(int index) /*-{
-    this.splice(index, 1);
-    return this;
+  public native <T> T remove(int index) /*-{
+    return this.splice(index, 1);
   }-*/;
 
   private native JsJsonValue get0(int index) /*-{

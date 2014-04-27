@@ -175,11 +175,11 @@ public class JreJsonObject extends JreJsonElement implements JsonObject {
     return map.keySet().toArray(new String[map.size()]);
   }
 
+  @SuppressWarnings("unchecked")
   @Override
-  public JsonObject remove(String key) {
+  public <T> T remove(String key) {
     checkCopy();
-    map.remove(key);
-    return this;
+    return (T) map.remove(key);
   }
 
   @Override
