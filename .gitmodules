@@ -1,0 +1,3 @@
+[submodule "GDJson"]
+  path = GDJson
+  url = https://github.com/goodow/GDJson.git

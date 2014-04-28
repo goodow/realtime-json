@@ -2,11 +2,12 @@
 .PHONY: default clean translate link
 
 include ../resources/make/common.mk
+# J2OBJC_DIST = GDJson/Project/Pods/J2ObjC/dist
 
-JSON_GEN_DIR = Classes/generated
+JSON_GEN_DIR = GDJson/Classes/generated
 MAIN_SOURCES = $(subst $(MAIN_SRC_DIR)/,,$(shell find $(MAIN_SRC_DIR)/com/goodow/realtime/json -maxdepth 1 -name *.java))
 MAIN_GEN_SOURCES = $(MAIN_SOURCES:%.java=$(JSON_GEN_DIR)/%.m)
-OVERRIDE_GEN_DIR = Classes/override
+OVERRIDE_GEN_DIR = GDJson/Classes/override
 MAIN_OBJECTS = $(MAIN_SOURCES:%.java=$(BUILD_DIR)/main/%.o)
 SUPPORT_LIB = $(BUILD_DIR)/libGDJson.a
 
