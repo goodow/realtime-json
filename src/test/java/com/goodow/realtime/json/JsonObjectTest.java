@@ -18,7 +18,73 @@ import com.goodow.realtime.json.impl.JacksonUtil;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 public class JsonObjectTest {
+  static class Bean {
+    public String str;
+    public boolean bool;
+    public Bean bean;
+
+    Bean(String str, boolean bool, Bean bean) {
+      this.str = str;
+      this.bool = bool;
+      this.bean = bean;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (this == obj) {
+        return true;
+      }
+      if (obj == null) {
+        return false;
+      }
+      if (getClass() != obj.getClass()) {
+        return false;
+      }
+      Bean other = (Bean) obj;
+      if (bean == null) {
+        if (other.bean != null) {
+          return false;
+        }
+      } else if (!bean.equals(other.bean)) {
+        return false;
+      }
+      if (bool != other.bool) {
+        return false;
+      }
+      if (str == null) {
+        if (other.str != null) {
+          return false;
+        }
+      } else if (!str.equals(other.str)) {
+        return false;
+      }
+      return true;
+    }
+  }
+
+  @Test
+  public void testConvert() {
+    String[] a = {"a", "bc"};
+    JsonArray array = JacksonUtil.convert(a);
+    Assert.assertEquals(Json.createArray().push("a").push("bc"), array);
+
+    Number[] b = {9., 4.};
+    array = JacksonUtil.convert(b);
+    Assert.assertEquals(Json.createArray().push(9).push(4), array);
+
+    Bean bean1 = new Bean("def", false, null);
+    Bean bean2 = new Bean("abc", true, bean1);
+    JsonObject obj = JacksonUtil.convert(bean2);
+    JsonObject obj1 = Json.createObject().set("str", "def").set("bool", false).set("bean", null);
+    JsonObject obj2 = Json.createObject().set("str", "abc").set("bool", true).set("bean", obj1);
+    Assert.assertEquals(obj2, obj);
+
+    array = JacksonUtil.convert(Arrays.asList(bean1, bean2));
+    Assert.assertEquals(Json.createArray().push(obj1).push(obj2), array);
+  }
 
   @Test
   public void testNumber() {

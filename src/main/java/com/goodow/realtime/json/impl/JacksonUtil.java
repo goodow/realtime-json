@@ -13,11 +13,15 @@
  */
 package com.goodow.realtime.json.impl;
 
+import com.goodow.realtime.json.JsonElement;
 import com.goodow.realtime.json.JsonException;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+
+import java.util.List;
+import java.util.Map;
 
 public class JacksonUtil {
 
@@ -28,6 +32,19 @@ public class JacksonUtil {
     // Non-standard JSON but we allow C style comments in our JSON
     mapper.configure(JsonParser.Feature.ALLOW_COMMENTS, true);
     prettyMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+  }
+
+  @SuppressWarnings("unchecked")
+  public static <T extends JsonElement> T convert(Object pojo) throws JsonException {
+    try {
+      if (pojo instanceof List || pojo instanceof Object[]) {
+        return (T) new JreJsonArray(mapper.convertValue(pojo, List.class));
+      } else {
+        return (T) new JreJsonObject(mapper.convertValue(pojo, Map.class));
+      }
+    } catch (Exception e) {
+      throw new JsonException("Failed to convert: " + e.getMessage());
+    }
   }
 
   @SuppressWarnings("unchecked")
