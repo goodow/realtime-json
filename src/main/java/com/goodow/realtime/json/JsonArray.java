@@ -111,4 +111,11 @@ public interface JsonArray extends JsonElement {
    * Remove an element of the array at a particular index.
    */
   <T> T remove(int index);
+
+  /**
+   * Removes the first instance of the given value from the list.
+   * 
+   * @return Whether the item was removed.
+   */
+  boolean removeValue(Object value);
 }

@@ -211,6 +211,11 @@ public class JreJsonArray extends JreJsonElement implements JsonArray {
   }
 
   @Override
+  public boolean removeValue(Object value) {
+    return list.remove(value);
+  }
+
+  @Override
   public String toJsonString() {
     return JacksonUtil.encode(list);
   }
