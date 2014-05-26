@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
-  <inherits name="com.google.gwt.core.Core" />
-  
+  <inherits name="com.google.gwt.useragent.UserAgent"/>
+
   <set-configuration-property name="user.agent.runtimeWarning" value="false" />
   <set-property name="user.agent" value="safari" />
   

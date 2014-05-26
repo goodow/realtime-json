@@ -13,12 +13,6 @@ Minimalistic JSON library for Java/Android/iOS/GWT/J2ObjC
 These are just a few of the major dependencies, the entire list of dependencies
 is listed in the [project's POM file](https://github.com/goodow/realtime-json/blob/master/pom.xml).
 
-### J2ObjC:
-
-Using these options when translating:
-j2objc --mapping [method-mappings.properties](https://github.com/goodow/realtime/blob/master/resources/j2objc/method-mappings.properties)
- --prefixes [package-prefixes.properties](https://github.com/goodow/realtime/blob/master/resources/j2objc/package-prefixes.properties)
-
 ### Javascript and GWT:
 
 * [Browser-native window.JSON](http://caniuse.com/json)
