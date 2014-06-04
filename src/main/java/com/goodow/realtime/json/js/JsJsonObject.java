@@ -13,6 +13,7 @@
  */
 package com.goodow.realtime.json.js;
 
+import com.goodow.realtime.json.JsonArray;
 import com.goodow.realtime.json.JsonObject;
 import com.goodow.realtime.json.JsonType;
 
@@ -112,7 +113,7 @@ public final class JsJsonObject extends JsJsonElement implements JsonObject {
   // @formatter:on
 
   @Override
-  public String[] keys() {
+  public JsonArray keys() {
     JsArrayString str = keys0();
     return reinterpretCast(str);
   }
@@ -176,7 +177,7 @@ public final class JsJsonObject extends JsJsonElement implements JsonObject {
     return keys;
   }-*/;
   
-  private native String[] reinterpretCast(JsArrayString arrayString) /*-{
+  private native JsonArray reinterpretCast(JsArrayString arrayString) /*-{
     return arrayString;
   }-*/;
   // @formatter:on

@@ -36,4 +36,7 @@ public class Json {
   public static void setFactory(JsonFactory factory) {
     FACTORY = factory;
   }
+
+  private Json() {
+  }
 }

@@ -13,9 +13,11 @@
  */
 package com.goodow.realtime.json.impl;
 
+import com.goodow.realtime.json.JsonArray;
 import com.goodow.realtime.json.JsonObject;
 import com.goodow.realtime.json.JsonType;
 
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -171,8 +173,8 @@ public class JreJsonObject extends JreJsonElement implements JsonObject {
   }
 
   @Override
-  public String[] keys() {
-    return map.keySet().toArray(new String[map.size()]);
+  public JsonArray keys() {
+    return new JreJsonArray(Arrays.asList(map.keySet().toArray(new Object[map.size()])));
   }
 
   @SuppressWarnings("unchecked")

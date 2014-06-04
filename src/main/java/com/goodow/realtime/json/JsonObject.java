@@ -94,7 +94,7 @@ public interface JsonObject extends JsonElement {
   /**
    * All keys of the object.
    */
-  String[] keys();
+  JsonArray keys();
 
   /**
    * Remove a given key and associated value from the object.

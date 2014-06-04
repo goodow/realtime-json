@@ -82,6 +82,8 @@ public class JsonObjectTest {
     JsonObject obj2 = Json.createObject().set("str", "abc").set("bool", true).set("bean", obj1);
     Assert.assertEquals(obj2, obj);
 
+    JsonArray ac = obj.keys();
+
     array = JacksonUtil.convert(Arrays.asList(bean1, bean2));
     Assert.assertEquals(Json.createArray().push(obj1).push(obj2), array);
   }
