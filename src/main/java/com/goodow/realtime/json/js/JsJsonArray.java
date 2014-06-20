@@ -125,13 +125,13 @@ public final class JsJsonArray extends JsJsonElement implements JsonArray {
 
   @Override
   public native JsonArray push(boolean bool_) /*-{
-    this[this.length] = Object(bool_);
+    this[this.length] = bool_;
     return this;
   }-*/;
 
   @Override
   public native JsonArray push(double number) /*-{
-    this[this.length] = Object(number);
+    this[this.length] = number;
     return this;
   }-*/;
 

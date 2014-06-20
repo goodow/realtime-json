@@ -128,13 +128,13 @@ public final class JsJsonObject extends JsJsonElement implements JsonObject {
 
   @Override
   public native JsonObject set(String key, boolean bool_) /*-{
-    this[key] = Object(bool_);
+    this[key] = bool_;
     return this;
   }-*/;
 
   @Override
   public native JsonObject set(String key, double number) /*-{
-    this[key] = Object(number);
+    this[key] = number;
     return this;
   }-*/;
 
