@@ -143,7 +143,7 @@ public final class JsJsonArray extends JsJsonElement implements JsonArray {
 
   @Override
   public native <T> T remove(int index) /*-{
-    return this.splice(index, 1);
+    return this.splice(index, 1)[0];
   }-*/;
   // @formatter:on
 
