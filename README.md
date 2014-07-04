@@ -3,6 +3,7 @@ realtime-json [![Build Status](https://travis-ci.org/goodow/realtime-json.svg?br
 
 Minimalistic JSON library for Java/Android/iOS/GWT/J2ObjC
 
+Visit [Google groups](https://groups.google.com/forum/#!forum/goodow-realtime) for discussions and announcements.
 
 ## Requires
 
@@ -46,6 +47,6 @@ Maven
 </dependencies>
 ```
 
-### iOS/Mac and J2ObjC:
+### iOS/Mac OS X and J2ObjC:
 
 See: https://github.com/goodow/GDJson
