@@ -16,6 +16,9 @@ package com.goodow.realtime.json;
 import java.io.Serializable;
 
 public interface JsonElement extends Serializable {
+  /**
+   * Removes all entries.
+   */
   <T extends JsonElement> T clear();
 
   <T extends JsonElement> T copy();

@@ -31,21 +31,6 @@ public final class JsJsonArray extends JsJsonElement implements JsonArray {
   protected JsJsonArray() {
   }
 
-  @SuppressWarnings("unchecked")
-  @Override
-  // @formatter:off
-  public native JsJsonArray clear() /*-{
-    this.length = 0;
-    return this;
-  }-*/;
-  // @formatter:on
-
-  @SuppressWarnings("unchecked")
-  @Override
-  public JsonArray copy() {
-    return JsJsonElement.copy(this);
-  }
-
   @Override
   // @formatter:off
   public native <T> void forEach(ListIterator<T> handler) /*-{

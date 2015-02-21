@@ -22,17 +22,6 @@ public interface JsonArray extends JsonElement {
   }
 
   /**
-   * Removes all values from the array.
-   */
-  @Override
-  @SuppressWarnings("unchecked")
-  JsonArray clear();
-
-  @SuppressWarnings("unchecked")
-  @Override
-  JsonArray copy();
-
-  /**
    * Calls a function for each element in an array.
    */
   <T> void forEach(ListIterator<T> handler);

@@ -6,7 +6,7 @@
     <version>0.5.5-SNAPSHOT</version>
   </parent>
   <artifactId>realtime-json</artifactId>
-  <url>https://github.com/goodow/realtime-json/</url>
+  <url>https://github.com/goodow/realtime-json</url>
   <inceptionYear>2013</inceptionYear>
   
   <properties>
@@ -19,17 +19,6 @@
       <id>sonatype-nexus-snapshots</id>
       <name>Sonatype Nexus Snapshots</name>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>sonatype-google-snapshots</id>
-      <name>Sonatype Google Snapshots</name>
-      <url>https://oss.sonatype.org/content/repositories/google-snapshots</url>
       <releases>
         <enabled>false</enabled>
       </releases>

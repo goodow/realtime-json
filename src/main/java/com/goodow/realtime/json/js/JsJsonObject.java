@@ -33,25 +33,6 @@ public final class JsJsonObject extends JsJsonElement implements JsonObject {
   protected JsJsonObject() {
   }
 
-  @SuppressWarnings("unchecked")
-  @Override
-  // @formatter:off
-  public native JsJsonObject clear() /*-{
-    for (var key in this) {
-      if (Object.prototype.hasOwnProperty.call(this, key)) {
-        delete this[key];
-      }
-    }
-    return this;
-  }-*/;
-  // @formatter:on
-
-  @SuppressWarnings("unchecked")
-  @Override
-  public JsonObject copy() {
-    return JsJsonElement.copy(this);
-  }
-
   @Override
   // @formatter:off
   public native <T> void forEach(MapIterator<T> handler) /*-{

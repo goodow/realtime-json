@@ -20,14 +20,21 @@ import com.goodow.realtime.json.JsonType;
 abstract class JsJsonElement extends JsJsonValue implements JsonElement {
   private static final long serialVersionUID = 2020864649803892593L;
 
-  // @formatter:off
-  static native <T extends JsonElement> T copy(JsJsonElement obj) /*-{
-    return $wnd.JSON.parse($wnd.JSON.stringify(obj));
-  }-*/;
-  // @formatter:on
-
   protected JsJsonElement() {
   }
+
+  @Override
+  @SuppressWarnings("unchecked")
+  public final <T extends JsonElement> T clear() {
+    return (T) (isObject() ? clearObject() : clearArray());
+  }
+
+  @Override
+  // @formatter:off
+  public final native <T extends JsonElement> T copy() /*-{
+    return $wnd.JSON.parse($wnd.JSON.stringify(this));
+  }-*/;
+  // @formatter:on
 
   @Override
   public final boolean isArray() {
@@ -47,4 +54,20 @@ abstract class JsJsonElement extends JsJsonValue implements JsonElement {
       throw new JsonException("Failed to encode as JSON: " + e.getMessage());
     }
   }
+
+  // @formatter:off
+  private native JsJsonArray clearArray() /*-{
+    this.length = 0;
+    return this;
+  }-*/;
+
+  private native JsJsonObject clearObject() /*-{
+    for (var key in this) {
+      if (Object.prototype.hasOwnProperty.call(this, key)) {
+        delete this[key];
+      }
+    }
+    return this;
+  }-*/;
+  // @formatter:on
 }

@@ -25,17 +25,6 @@ public interface JsonObject extends JsonElement {
   }
 
   /**
-   * Removes all entries.
-   */
-  @Override
-  @SuppressWarnings("unchecked")
-  JsonObject clear();
-
-  @SuppressWarnings("unchecked")
-  @Override
-  JsonObject copy();
-
-  /**
    * Method for iterating through the contents of an object.
    * 
    * <p>
@@ -98,8 +87,6 @@ public interface JsonObject extends JsonElement {
 
   /**
    * Remove a given key and associated value from the object.
-   * 
-   * @param key
    */
   <T> T remove(String key);
 
